@@ -177,6 +177,7 @@
 ;; (global-hl-line-mode t)
 (global-visual-line-mode t)
 (setq make-backup-files nil)
+(setq-default cursor-type 'bar)
 
 (setq doc-view-ghostscript-program "/usr/local/bin/gs")
 
