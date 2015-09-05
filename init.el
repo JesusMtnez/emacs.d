@@ -218,10 +218,6 @@
 (global-set-key (kbd "C-S-z")   'undo-tree-redo)
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;; TEMPORARY - Ciao configuration - Prolog
-(if (file-exists-p "/usr/local/lib/ciao/ciao-1.14/ciao-mode-init.el")
-    (load-file "/usr/local/lib/ciao/ciao-1.14/ciao-mode-init.el"))
-
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
