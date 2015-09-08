@@ -240,3 +240,6 @@
  '(neo-expand-btn-face ((t (:foreground "SkyBlue"))))
  '(neo-file-link-face ((t (:foreground "White"))))
  '(neo-header-face ((t (:foreground "lightBlue" :weight bold)))))
+
+(if (file-exists-p "~/.emacs.d/localrc.el")
+    (load "~/.emacs.d/localrc.el"))
