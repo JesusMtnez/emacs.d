@@ -182,8 +182,8 @@
 (setq doc-view-ghostscript-program "/usr/local/bin/gs")
 
 ;; Font configuration
-(set-face-attribute 'default nil :font "DejaVu Sans Mono")
-(set-frame-font "DejaVu Sans Mono 9" nil t)
+(set-face-attribute 'default nil :font "DejaVu Sans Mono for Powerline")
+(set-frame-font "DejaVu Sans Mono for Powerline 9" nil t)
 ;; Encoding configuration
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
