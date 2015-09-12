@@ -151,9 +151,6 @@
 (require 'move-lines)
 (move-lines-binding)
 
-;; linum-off package
-(paradox-require 'linum-off)
-
 ;; livedown package
 (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
 (require 'livedown)
