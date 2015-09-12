@@ -148,11 +148,6 @@
 ;; OLD CONFIGURATIONS ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Bootstrap 'paradox-package-manager
-(unless (package-installed-p 'paradox)
-  (package-refresh-contents)
-  (package-install 'paradox))
-
 ;; move-lines package
 (add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
 (require 'move-lines)
