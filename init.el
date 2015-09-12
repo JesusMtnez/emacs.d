@@ -18,6 +18,17 @@
   (require 'use-package))
 (require 'bind-key)
 
+;; Color Theme: Solarized Dark [Light]
+(use-package color-theme-solarized
+  :ensure t
+  :init
+    (require 'color-theme)
+  :config
+    (set-frame-parameter nil 'background-mode 'dark)
+    (set-terminal-parameter nil 'background-mode 'dark)
+    (add-to-list 'load-path (car (directory-files "~/.emacs.d/elpa" t "color-theme-solarized-*" nil)))
+    (color-theme-solarized))
+
 ;; Common Lisp
 (use-package cl
   :ensure t
@@ -167,13 +178,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal configurations ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Solarized Dark Theme
-(add-to-list 'custom-theme-load-path "~/.emacs.d/emacs-color-theme-solarized")
-(load-theme 'solarized t)
-(set-frame-parameter nil 'background-mode 'dark)
-(set-terminal-parameter nil 'background-mode 'dark)
-(enable-theme 'solarized)
-
 (setq-default c-basic-offset 4
               tab-width 4
               indent-tabs-mode nil
