@@ -34,6 +34,33 @@
   :ensure t
   :defer t)
 
+;; Helm
+(use-package helm
+  :ensure t
+  :defer t
+  :bind (("C-c h" . helm-command-prefix)
+         ("C-x C-f" . helm-find-files)
+         ("C-x b" . helm-buffers-list)
+         ("M-x" . helm-M-x)
+         ("M-y" . helm-show-kill-ring))
+  :config
+    (require 'helm-config)
+    (setq helm-split-window-in-side-p t
+      helm-move-to-line-cycle-in-source t
+      helm-ff-search-library-in-sexp t
+      helm-scroll-amount 8
+      helm-ff-file-name-history-use-recentf t
+      helm-autoresize-mode t;
+      helm-autoresize-max-height 20
+      helm-mode-fuzzy-match t
+      helm-completion-in-region-fuzzy-match t
+      helm-M-x-fuzzy-match t)
+    (helm-mode t)
+    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+    (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
+  )
+
 ;; Powerline
 (use-package powerline
   :ensure t
@@ -49,41 +76,6 @@
 (unless (package-installed-p 'paradox)
   (package-refresh-contents)
   (package-install 'paradox))
-
-(package-install 'helm)
-(require 'helm)
-(require 'helm-config)
-
-(global-set-key (kbd "C-c h") 'helm-command-prefix)
-(global-unset-key (kbd "C-x c"))
-(global-set-key (kbd "M-x") 'helm-M-x) ; replace M-x with helm-M-X
-(global-set-key (kbd "C-x C-f") 'helm-find-files) ; replace find-file
-(global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
-
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-(define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-(define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
-
-(when (executable-find "curl")
-  (setq helm-google-suggest-use-curl-p t))
-
-(setq helm-split-window-in-side-p t
-      helm-move-to-line-cycle-in-source t
-      helm-ff-search-library-in-sexp t
-      helm-scroll-amount 8
-      helm-ff-file-name-history-use-recentf t
-      ;; Enable autoresize
-      helm-autoresize-mode t;
-      helm-autoresize-max-height 20
-      ;; Enable fuzzy matching globally in helm
-      ;; Not working in helm-M-x
-      helm-mode-fuzzy-match t
-      helm-completion-in-region-fuzzy-match t
-      ;; Fix fuzzy matching in helm-M-x
-      helm-M-x-fuzzy-match t)
-
-(helm-mode t)
 
 ;; ido-vertical-mode package
 ;; (paradox-require 'ido-vertical-mode)
