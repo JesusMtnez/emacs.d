@@ -68,6 +68,13 @@
                  )
   )
 
+;; Highlight-Characters
+(use-package highlight-chars
+  :ensure t
+  :config (progn (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+		 (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)))
+
+;; JS2-mode
 (use-package js2-mode
   :ensure t
   :defer t
@@ -154,17 +161,6 @@
 ;; livedown package
 (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
 (require 'livedown)
-
-;; highlight-chars package
-(paradox-require 'highlight-chars)
-(add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
-(add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)
-(add-hook 'after-change-major-mode-hook
-          (lambda ()
-            (when (eq major-mode 'ibuffer-mode)
-              (remove-hook 'font-lock-mode-hook
-                           'hc-highlight-trailing-whitespace)
-              (hc-dont-highlight-trailing-whitespace))))
 
 ;; misc package for extra functionality
 (require 'misc)
