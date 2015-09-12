@@ -17,17 +17,17 @@
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)
+(require 'diminish)
 
 ;; Color Theme: Solarized Dark [Light]
 (use-package color-theme-solarized
   :ensure t
-  :init
-    (require 'color-theme)
-  :config
-    (set-frame-parameter nil 'background-mode 'dark)
-    (set-terminal-parameter nil 'background-mode 'dark)
-    (add-to-list 'load-path (car (directory-files "~/.emacs.d/elpa" t "color-theme-solarized-*" nil)))
-    (color-theme-solarized))
+  :init (require 'color-theme)
+  :config (progn (set-frame-parameter nil 'background-mode 'dark)
+                 (set-terminal-parameter nil 'background-mode 'dark)
+                 (add-to-list 'load-path (car (directory-files "~/.emacs.d/elpa" t "color-theme-solarized-*" nil)))
+                 (color-theme-solarized))
+  )
 
 ;; Common Lisp
 (use-package cl
@@ -38,35 +38,34 @@
 (use-package helm
   :ensure t
   :defer t
+  :config (progn (require 'helm-config)
+                 (setq helm-split-window-in-side-p t
+                       helm-move-to-line-cycle-in-source t
+                       helm-ff-search-library-in-sexp t
+                       helm-scroll-amount 8
+                       helm-ff-file-name-history-use-recentf t
+                       helm-autoresize-mode t;
+                       helm-autoresize-max-height 20
+                       helm-mode-fuzzy-match t
+                       helm-completion-in-region-fuzzy-match t
+                       helm-M-x-fuzzy-match t)
+                 (helm-mode t)
+                 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
+                 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
+                 (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
+                 )
   :bind (("C-c h" . helm-command-prefix)
          ("C-x C-f" . helm-find-files)
          ("C-x b" . helm-buffers-list)
          ("M-x" . helm-M-x)
          ("M-y" . helm-show-kill-ring))
-  :config
-    (require 'helm-config)
-    (setq helm-split-window-in-side-p t
-      helm-move-to-line-cycle-in-source t
-      helm-ff-search-library-in-sexp t
-      helm-scroll-amount 8
-      helm-ff-file-name-history-use-recentf t
-      helm-autoresize-mode t;
-      helm-autoresize-max-height 20
-      helm-mode-fuzzy-match t
-      helm-completion-in-region-fuzzy-match t
-      helm-M-x-fuzzy-match t)
-    (helm-mode t)
-    (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-    (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-    (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
   )
 
 ;; Magit
 (use-package magit
   :ensure t
   :defer t
-  :config
-    (setq magit-last-seen-setup-instructions "1.4.0"))
+  :config (progn (setq magit-last-seen-setup-instructions "1.4.0")))
 
 ;; Markdown-mode
 (use-package markdown-mode
@@ -75,31 +74,28 @@
   :mode (("\\.md" . gfm-mode)
          ("\\.mdown" . gfm-mode)
          ("\\.markdown" . gfm-mode))
-  :config
-    (set-variable 'markdown-indent-on-enter nil))
+  :config (progn (set-variable 'markdown-indent-on-enter nil)))
 
 ;; Neo-tree
 (use-package neotree
   :ensure t
   :defer t
-  :bind ("<f8>" . neotree-toggle)
+  :bind ("<f8>" . neotree-toggle))
   ;TODO: Add config section with set-face-attribute
-)
 
 ;; Powerline
 (use-package powerline
   :ensure t
-  :config
-    (powerline-center-theme)
-    (setq powerline-default-separator 'contour))
+  :config (progn (powerline-center-theme)
+                 (setq powerline-default-separator 'contour)))
 
+;; Undo-Tree
 (use-package undo-tree
   :ensure t
   :defer t
   :bind (("C-z" . undo-tree-undo)
          ("C-S-z" . undo-tree-redo))
-  :init
-    (global-undo-tree-mode t)
+  :init (progn (global-undo-tree-mode t))
   :diminish undo-tree-mode)
 
 ;; Web-mode
@@ -107,22 +103,21 @@
   :ensure t
   :defer t
   :mode ("\\.html?\\'" "\\.css?\\'")
-  :config
-    (setq web-mode-code-indent-offset 2)
-    (setq web-mode-css-indent-offset 2)
-    (setq web-mode-markup-indent-offset 2)
-    (setq web-mode-script-padding 2)
-    (setq web-mode-enable-auto-pairing t)
-    (setq web-mode-enable-current-element-highlight t)
-    (setq web-mode-enable-current-column-highlight t)
-    (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
-    (set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642"))
+  :config (progn (setq web-mode-code-indent-offset 2)
+                 (setq web-mode-css-indent-offset 2)
+                 (setq web-mode-markup-indent-offset 2)
+                 (setq web-mode-script-padding 2)
+                 (setq web-mode-enable-auto-pairing t)
+                 (setq web-mode-enable-current-element-highlight t)
+                 (setq web-mode-enable-current-column-highlight t)
+                 (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
+                 (set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642")))
 
 ;; Web-mode -> Emmet
 (use-package emmet-mode
-    :ensure t
-    :defer t
-    :config (add-hook 'web-mode-hook 'emmet-mode))
+  :ensure t
+  :defer t
+  :config (progn (add-hook 'web-mode-hook 'emmet-mode)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
