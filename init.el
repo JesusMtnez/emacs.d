@@ -59,12 +59,12 @@
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
                  )
-  :bind (("C-c h" . helm-command-prefix)
-         ("C-x C-f" . helm-find-files)
-         ("C-x b" . helm-buffers-list)
-         ("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring))
   )
+
+(use-package js2-mode
+  :ensure t
+  :defer t
+  :mode (("\\.js" . js2-mode)))
 
 ;; Magit
 (use-package magit
@@ -144,10 +144,6 @@
 
 ;; linum-off package
 (paradox-require 'linum-off)
-
-;; js2-mode package
-(paradox-require 'js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
 
 ;; autocomplete for js2-mode package
 (paradox-require 'ac-js2)
