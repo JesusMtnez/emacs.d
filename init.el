@@ -95,6 +95,12 @@
   :bind ("<f8>" . neotree-toggle))
   ;TODO: Add config section with set-face-attribute
 
+;; nlinum
+(use-package nlinum
+  :ensure t
+  :config (progn (setq nlinum-format "%4d")
+                 (add-hook 'after-init-hook 'global-nlinum-mode)))
+
 ;; Powerline
 (use-package powerline
   :ensure t
@@ -166,9 +172,6 @@
 ;; misc package for extra functionality
 (require 'misc)
 
-;; nlinum package
-(paradox-require 'nlinum)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal configurations ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -186,9 +189,7 @@
 (column-number-mode t)
 (electric-pair-mode t)
 (delete-selection-mode t)
-(global-nlinum-mode t)
 (global-auto-revert-mode t)
-(setq nlinum-format "%4d")
 (global-visual-line-mode t)
 (setq make-backup-files nil)
 (setq-default cursor-type 'bar)
