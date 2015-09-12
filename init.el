@@ -68,6 +68,16 @@
   :config
     (setq magit-last-seen-setup-instructions "1.4.0"))
 
+;; Markdown-mode
+(use-package markdown-mode
+  :ensure t
+  :defer t
+  :mode (("\\.md" . gfm-mode)
+         ("\\.mdown" . gfm-mode)
+         ("\\.markdown" . gfm-mode))
+  :config
+    (set-variable 'markdown-indent-on-enter nil))
+
 ;; Neo-tree
 (use-package neotree
   :ensure t
@@ -122,13 +132,6 @@
 (add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
 (require 'move-lines)
 (move-lines-binding)
-
-;; markdown package
-(paradox-require 'markdown-mode)
-(autoload 'markdown-mode "markdown-mode.el" "Major mode for editing Markdown files" t)
-(add-to-list 'auto-mode-alist '("\\.md\\'" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.mdown\\'" . gfm-mode))
-(add-to-list 'auto-mode-alist '("\\.markdown\\'" . gfm-mode))
 
 ;; linum-off package
 (paradox-require 'linum-off)
@@ -235,7 +238,6 @@
  '(livedown:autostart t)
  '(livedown:open t)
  '(livedown:port 1337)
- '(markdown-indent-on-enter nil)
  '(paradox-github-token t)
  '(sh-indentation 2))
 (custom-set-faces
