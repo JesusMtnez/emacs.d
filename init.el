@@ -61,6 +61,13 @@
     (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
   )
 
+;; Magit
+(use-package magit
+  :esure t
+  :defer t
+  :config
+    (setq magit-last-seen-setup-instructions "1.4.0"))
+
 ;; Neo-tree
 (use-package neotree
   :ensure t
@@ -115,10 +122,6 @@
 (add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
 (require 'move-lines)
 (move-lines-binding)
-
-;; magit package
-(paradox-require 'magit)
-(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; markdown package
 (paradox-require 'markdown-mode)
