@@ -95,8 +95,7 @@
 (use-package emmet-mode
     :ensure t
     :defer t
-    :if web-mode
-    :init (add-hook 'web-mode 'emmet-mode))
+    :config (add-hook 'web-mode-hook 'emmet-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
