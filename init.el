@@ -68,6 +68,22 @@
     (powerline-center-theme)
     (setq powerline-default-separator 'contour))
 
+;; Web-mode
+(use-package web-mode
+  :ensure t
+  :defer t
+  :mode ("\\.html?\\'" "\\.css?\\'")
+  :config
+    (setq web-mode-code-indent-offset 2)
+    (setq web-mode-css-indent-offset 2)
+    (setq web-mode-markup-indent-offset 2)
+    (setq web-mode-script-padding 2)
+    (setq web-mode-enable-auto-pairing t)
+    (setq web-mode-enable-current-element-highlight t)
+    (setq web-mode-enable-current-column-highlight t)
+    (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
+    (set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -81,19 +97,6 @@
 ;; (paradox-require 'ido-vertical-mode)
 ;; (ido-mode t)
 ;; (ido-vertical-mode t)
-
-;; web-mode package
-(paradox-require 'web-mode)
-(setq web-mode-code-indent-offset 2)
-(setq web-mode-css-indent-offset 2)
-(setq web-mode-markup-indent-offset 2)
-(setq web-mode-script-padding 2)
-(setq web-mode-enable-auto-pairing t)
-(setq web-mode-enable-current-element-highlight t)
-(setq web-mode-enable-current-column-highlight t)
-(set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
-(set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642")
-(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
 
 ;; emmet-mode package
 (paradox-require 'emmet-mode)
