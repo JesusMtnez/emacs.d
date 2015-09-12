@@ -120,10 +120,6 @@
 (require 'move-lines)
 (move-lines-binding)
 
-;; projectile package
-;; (paradox-require 'projectile)
-;; (projectile-global-mode t)
-
 ;; magit package
 (paradox-require 'magit)
 (setq magit-last-seen-setup-instructions "1.4.0")
@@ -166,9 +162,6 @@
                            'hc-highlight-trailing-whitespace)
               (hc-dont-highlight-trailing-whitespace))))
 
-;; IBuffer package
-;; (paradox-require 'ibuffer)
-
 ;; misc package for extra functionality
 (require 'misc)
 
@@ -195,12 +188,9 @@
 (global-nlinum-mode t)
 (global-auto-revert-mode t)
 (setq nlinum-format "%4d")
-;; (global-hl-line-mode t)
 (global-visual-line-mode t)
 (setq make-backup-files nil)
 (setq-default cursor-type 'bar)
-
-(setq doc-view-ghostscript-program "/usr/local/bin/gs")
 
 ;; Font configuration
 (set-face-attribute 'default nil :font "DejaVu Sans Mono for Powerline")
@@ -237,15 +227,12 @@
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 (global-set-key (kbd "C-z")     'undo-tree-undo)
 (global-set-key (kbd "C-S-z")   'undo-tree-redo)
-(global-set-key (kbd "C-x C-b") 'ibuffer)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ciao-first-indent-width 2)
- '(ciao-indent-width 2)
  '(livedown:autostart t)
  '(livedown:open t)
  '(livedown:port 1337)
