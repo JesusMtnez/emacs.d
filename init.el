@@ -64,13 +64,14 @@
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
                  (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
                  )
+  :diminish helm-mode
   )
 
 ;; Highlight-Characters
 (use-package highlight-chars
   :ensure t
   :config (progn (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
-		 (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)))
+                 (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)))
 
 ;; JS2-mode
 (use-package js2-mode
@@ -147,13 +148,13 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; move-lines package
-(add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
-(require 'move-lines)
-(move-lines-binding)
+;;(add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
+;;(require 'move-lines)
+;;(move-lines-binding)
 
 ;; livedown package
-(add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
-(require 'livedown)
+;; (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
+;; (require 'livedown)
 
 ;; misc package for extra functionality
 (require 'misc)
@@ -197,19 +198,6 @@
 (setq ns-right-option-modifier 'none)
 ;; (setq inhibit-startup-screen t)
 
-;; Comment line/region function. Bind to C-c C-c
-(defun comment-or-uncomment-region-or-line ()
-  "Comments or uncomments the region or the current line if there's no active region."
-  (interactive)
-  (let (beg end)
-    (if (region-active-p)
-      (setq beg (region-beginning) end (region-end))
-      (setq beg (line-beginning-position) end (line-end-position))
-    )
-    (comment-or-uncomment-region beg end)
-  )
-)
-
 ;; Key bindings
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
@@ -222,7 +210,6 @@
  '(livedown:autostart t)
  '(livedown:open t)
  '(livedown:port 1337)
- '(paradox-github-token t)
  '(sh-indentation 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
