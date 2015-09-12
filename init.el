@@ -23,6 +23,10 @@
   :ensure t
   :defer t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; OLD CONFIGURATIONS ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Bootstrap 'paradox-package-manager
 (unless (package-installed-p 'paradox)
   (package-refresh-contents)
