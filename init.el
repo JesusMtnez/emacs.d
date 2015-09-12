@@ -64,7 +64,7 @@
 (use-package neotree
     :ensure t
     :defer t
-    :bind ("f8" . neotree-toggle)
+    :bind ("<f8>" . neotree-toggle)
     ;TODO: Add config section with set-face-attribute
 )
 
