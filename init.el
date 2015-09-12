@@ -63,7 +63,7 @@
 
 ;; Magit
 (use-package magit
-  :esure t
+  :ensure t
   :defer t
   :config
     (setq magit-last-seen-setup-instructions "1.4.0"))
