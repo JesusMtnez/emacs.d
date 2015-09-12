@@ -61,6 +61,13 @@
     (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
   )
 
+(use-package neotree
+    :ensure t
+    :defer t
+    :bind ("f8" . neotree-toggle)
+    ;TODO: Add config section with set-face-attribute
+)
+
 ;; Powerline
 (use-package powerline
   :ensure t
@@ -117,10 +124,6 @@
 ;; projectile package
 ;; (paradox-require 'projectile)
 ;; (projectile-global-mode t)
-
-;; neotree package
-(paradox-require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
 
 ;; magit package
 (paradox-require 'magit)
