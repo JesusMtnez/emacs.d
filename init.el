@@ -34,6 +34,14 @@
   :ensure t
   :defer t)
 
+;; Company
+(use-package company
+  :ensure t
+  :defer t
+  :config (progn (add-hook 'after-init-hook 'global-company-mode))
+  :diminish company-mode)
+;; TODO: Company integration with helm: https://github.com/yasuyk/helm-company
+
 ;; Helm
 (use-package helm
   :ensure t
