@@ -133,10 +133,6 @@
   (package-refresh-contents)
   (package-install 'paradox))
 
-;; auto-complete package
-(paradox-require 'auto-complete)
-(global-auto-complete-mode t)
-
 ;; move-lines package
 (add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
 (require 'move-lines)
@@ -144,11 +140,6 @@
 
 ;; linum-off package
 (paradox-require 'linum-off)
-
-;; autocomplete for js2-mode package
-(paradox-require 'ac-js2)
-(setq ac-js2-evaluate-calls t)
-(add-hook 'js2-mode-hook 'ac-js2-mode)
 
 ;; livedown package
 (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
