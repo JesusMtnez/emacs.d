@@ -84,6 +84,13 @@
     (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
     (set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642"))
 
+;; Web-mode -> Emmet
+(use-package emmet-mode
+    :ensure t
+    :defer t
+    :if web-mode
+    :init (add-hook 'web-mode 'emmet-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -97,10 +104,6 @@
 ;; (paradox-require 'ido-vertical-mode)
 ;; (ido-mode t)
 ;; (ido-vertical-mode t)
-
-;; emmet-mode package
-(paradox-require 'emmet-mode)
-(add-hook 'web-mode-hook 'emmet-mode)
 
 ;; auto-complete package
 (paradox-require 'auto-complete)
