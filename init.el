@@ -106,11 +106,6 @@
   (package-refresh-contents)
   (package-install 'paradox))
 
-;; ido-vertical-mode package
-;; (paradox-require 'ido-vertical-mode)
-;; (ido-mode t)
-;; (ido-vertical-mode t)
-
 ;; auto-complete package
 (paradox-require 'auto-complete)
 (global-auto-complete-mode t)
