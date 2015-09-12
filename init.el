@@ -23,6 +23,13 @@
   :ensure t
   :defer t)
 
+;; Powerline
+(use-package powerline
+  :ensure t
+  :config
+    (powerline-center-theme)
+    (setq powerline-default-separator 'contour))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
@@ -71,11 +78,6 @@
 ;; (paradox-require 'ido-vertical-mode)
 ;; (ido-mode t)
 ;; (ido-vertical-mode t)
-
-;; powerline
-(paradox-require 'powerline)
-(powerline-center-theme)
-(setq powerline-default-separator 'contour)
 
 ;; web-mode package
 (paradox-require 'web-mode)
