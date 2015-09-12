@@ -93,6 +93,15 @@
     (powerline-center-theme)
     (setq powerline-default-separator 'contour))
 
+(use-package undo-tree
+  :ensure t
+  :defer t
+  :bind (("C-z" . undo-tree-undo)
+         ("C-S-z" . undo-tree-redo))
+  :init
+    (global-undo-tree-mode t)
+  :diminish undo-tree-mode)
+
 ;; Web-mode
 (use-package web-mode
   :ensure t
@@ -135,10 +144,6 @@
 
 ;; linum-off package
 (paradox-require 'linum-off)
-
-;; undo-tree package
-(paradox-require 'undo-tree)
-(global-undo-tree-mode t)
 
 ;; js2-mode package
 (paradox-require 'js2-mode)
@@ -227,8 +232,6 @@
 ;; Key bindings
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
-(global-set-key (kbd "C-z")     'undo-tree-undo)
-(global-set-key (kbd "C-S-z")   'undo-tree-redo)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
