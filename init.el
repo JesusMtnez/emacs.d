@@ -18,6 +18,11 @@
   (require 'use-package))
 (require 'bind-key)
 
+;; Common Lisp
+(use-package cl
+  :ensure t
+  :defer t)
+
 ;; Bootstrap 'paradox-package-manager
 (unless (package-installed-p 'paradox)
   (package-refresh-contents)
@@ -62,9 +67,6 @@
 ;; (paradox-require 'ido-vertical-mode)
 ;; (ido-mode t)
 ;; (ido-vertical-mode t)
-
-;; common lisp package
-(paradox-require 'cl)
 
 ;; powerline
 (paradox-require 'powerline)
