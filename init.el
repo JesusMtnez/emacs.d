@@ -94,6 +94,13 @@
          ("\\.markdown" . gfm-mode))
   :config (progn (set-variable 'markdown-indent-on-enter nil)))
 
+;; Move-text
+(use-package move-text
+  :ensure t
+  :defer t
+  :bind (("M-p" . move-text-up)
+         ("M-n" . move-text-down)))
+
 ;; Neo-tree
 (use-package neotree
   :ensure t
@@ -146,12 +153,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; OLD CONFIGURATIONS ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; move-lines package
-;;(add-to-list 'load-path "~/.emacs.d/non-elpa/move-lines")
-;;(require 'move-lines)
-;;(move-lines-binding)
-
 ;; livedown package
 ;; (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
 ;; (require 'livedown)
