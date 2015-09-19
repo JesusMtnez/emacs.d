@@ -85,6 +85,8 @@
 ;; Magit
 (use-package magit
   :ensure t
+  :defer t
+  :init (progn (global-git-commit-mode t))
   :config (progn (setq magit-last-seen-setup-instructions "1.4.0")))
 
 ;; Markdown-mode
