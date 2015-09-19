@@ -17,14 +17,17 @@
 (require 'bind-key)
 (require 'diminish)
 
+;; Color-theme
+(use-package color-theme
+  :ensure t)
+
 ;; Color Theme: Solarized Dark [Light]
 (use-package color-theme-solarized
   :ensure t
-  :init (require 'color-theme)
-  :config (progn (set-frame-parameter nil 'background-mode 'dark)
-                 (set-terminal-parameter nil 'background-mode 'dark)
-                 (add-to-list 'load-path (car (directory-files "~/.emacs.d/elpa" t "color-theme-solarized-*" nil)))
-                 (color-theme-solarized))
+  :config (progn (load-theme 'solarized t)
+               (set-frame-parameter nil 'background-mode 'dark)
+               (set-terminal-parameter nil 'background-mode 'dark)
+               (enable-theme 'solarized))
   )
 
 ;; Common Lisp
