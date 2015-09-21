@@ -215,6 +215,7 @@
  '(livedown:autostart t)
  '(livedown:open t)
  '(livedown:port 1337)
+ '(sh-basic-offset 2)
  '(sh-indentation 2))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
