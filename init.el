@@ -117,13 +117,6 @@
   :ensure t
   :config (progn (setq nlinum-format "%4d")
                  (add-hook 'after-init-hook 'global-nlinum-mode)))
-
-;; Powerline
-(use-package powerline
-  :ensure t
-  :config (progn (powerline-center-theme)
-                 (setq powerline-default-separator 'contour)))
-
 ;; Undo-Tree
 (use-package undo-tree
   :ensure t
