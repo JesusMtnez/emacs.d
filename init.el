@@ -228,5 +228,8 @@
  '(neo-file-link-face ((t (:foreground "White"))))
  '(neo-header-face ((t (:foreground "lightBlue" :weight bold)))))
 
+;; Maximized frame on boot
+(toggle-frame-maximized)
+
 (if (file-exists-p "~/.emacs.d/localrc.el")
     (load "~/.emacs.d/localrc.el"))
