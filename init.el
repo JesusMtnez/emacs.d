@@ -112,11 +112,11 @@
   :bind ("<f8>" . neotree-toggle))
   ;TODO: Add config section with set-face-attribute
 
-;; nlinum
-(use-package nlinum
+;; linum
+(use-package linum
   :ensure t
-  :config (progn (setq nlinum-format "%4d")
-                 (add-hook 'after-init-hook 'global-nlinum-mode)))
+  :config (progn (setq linum-format "%4d")
+                 (add-hook 'after-init-hook 'global-linum-mode)))
 
 ;; Powerline
 (use-package powerline
