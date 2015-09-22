@@ -42,6 +42,11 @@
   :diminish company-mode)
 ;; TODO: Company integration with helm: https://github.com/yasuyk/helm-company
 
+;; fzf in Emacs
+(use-package fzf
+  :ensure t
+  :defer t)
+
 ;; Helm
 (use-package helm
   :ensure t
