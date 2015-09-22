@@ -122,7 +122,8 @@
 (use-package powerline
   :ensure t
   :config (progn (powerline-center-theme)
-                 (setq powerline-default-separator 'contour)))
+                 (setq powerline-default-separator 'contour)
+                 (add-hook 'after-init-hook 'powerline-reset)))
 
 ;; Undo-Tree
 (use-package undo-tree
