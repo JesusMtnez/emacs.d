@@ -25,9 +25,9 @@
 (use-package color-theme-solarized
   :ensure t
   :config (progn (load-theme 'solarized t)
-               (set-frame-parameter nil 'background-mode 'dark)
-               (set-terminal-parameter nil 'background-mode 'dark)
-               (enable-theme 'solarized))
+                 (set-frame-parameter nil 'background-mode 'dark)
+                 (set-terminal-parameter nil 'background-mode 'dark)
+                 (enable-theme 'solarized))
   )
 
 ;; Common Lisp
@@ -126,8 +126,7 @@
 ;; Powerline
 (use-package powerline
   :ensure t
-  :config (progn (powerline-center-theme)
-                 (setq powerline-default-separator 'contour)
+  :config (progn (powerline-default-theme)
                  (add-hook 'after-init-hook 'powerline-reset)))
 
 ;; Undo-Tree
@@ -159,13 +158,6 @@
   :ensure t
   :defer t
   :config (progn (add-hook 'web-mode-hook 'emmet-mode)))
-
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; OLD CONFIGURATIONS ;;
-;;;;;;;;;;;;;;;;;;;;;;;;
-;; livedown package
-;; (add-to-list 'load-path "~/.emacs.d/non-elpa/emacs-livedown")
-;; (require 'livedown)
 
 ;; misc package for extra functionality
 (require 'misc)
