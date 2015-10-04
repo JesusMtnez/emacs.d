@@ -159,6 +159,14 @@
   :defer t
   :config (progn (add-hook 'web-mode-hook 'emmet-mode)))
 
+;; Yasnippets
+(use-package yasnippet
+  :ensure t
+  :defer t
+  :init (progn (setq yas-snippet-dirs (cons (concat user-emacs-directory "snippets") '()))
+               (setq yas-verbosity 1)
+               (yas-global-mode t)))
+
 ;; misc package for extra functionality
 (require 'misc)
 
