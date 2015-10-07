@@ -17,6 +17,11 @@
 (require 'bind-key)
 (require 'diminish)
 
+;; Auto Package Update
+(use-package auto-package-update
+  :ensure t
+  :defer t)
+
 ;; Color-theme
 (use-package color-theme
   :ensure t)
