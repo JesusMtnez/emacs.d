@@ -1,0 +1,6 @@
+#name: use-package
+#key: up
+# --
+(use-package ${1:PKG_NAME}
+  :ensure t
+  :defer t)$0
