@@ -20,7 +20,8 @@
 ;; Auto Package Update
 (use-package auto-package-update
   :ensure t
-  :defer t)
+  :defer t
+  :config (progn (setq auto-package-update-delete-old-versions t)))
 
 ;; Color-theme
 (use-package color-theme
@@ -32,8 +33,7 @@
   :config (progn (load-theme 'solarized t)
                  (set-frame-parameter nil 'background-mode 'dark)
                  (set-terminal-parameter nil 'background-mode 'dark)
-                 (enable-theme 'solarized))
-  )
+                 (enable-theme 'solarized)))
 
 ;; Common Lisp
 (use-package cl
