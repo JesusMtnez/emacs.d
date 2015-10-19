@@ -134,6 +134,11 @@
   :config (progn (powerline-default-theme)
                  (add-hook 'after-init-hook 'powerline-reset)))
 
+;; Rainbow mode
+(use-package rainbow-mode
+  :ensure t
+  :defer t)
+
 ;; Undo-Tree
 (use-package undo-tree
   :ensure t
@@ -235,8 +240,8 @@
  ;; If there is more than one, they won't work right.
  '(neo-dir-link-face ((t (:foreground "DeepSkyBlue"))))
  '(neo-expand-btn-face ((t (:foreground "SkyBlue"))))
- '(neo-file-link-face ((t (:foreground "White"))))
- '(neo-header-face ((t (:foreground "lightBlue" :weight bold)))))
+ '(neo-file-link-face ((t (:foreground "white"))))
+ '(neo-header-face ((t (:foreground "LightBlue" :weight bold)))))
 
 (if (file-exists-p "~/.emacs.d/localrc.el")
     (load "~/.emacs.d/localrc.el"))
