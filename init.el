@@ -43,7 +43,10 @@
 ;; Company
 (use-package company
   :ensure t
-  :config (progn (add-hook 'after-init-hook 'global-company-mode))
+  :config (progn (add-hook 'after-init-hook 'global-company-mode)
+                 (setq company-idle-delay 0.1)          ; Reduce company auto complete start time
+                 (setq company-minimum-prefix-length 1) ; Reduce prefix to start completion
+                 (setq company-show-numbers t))         ; Show number to quick access with M-number
   :diminish company-mode)
 ;; TODO: Company integration with helm: https://github.com/yasuyk/helm-company
 
@@ -63,7 +66,7 @@
          ("M-y" . helm-show-kill-ring))
   :config (progn (require 'helm-config)
                  (setq helm-split-window-in-side-p t
-                       helm-move-to-line-cycle-in-source t
+                       helm-move-to-line-cycle-in-source t ; Circle when using helm-next/previous-line
                        helm-ff-search-library-in-sexp t
                        helm-scroll-amount 8
                        helm-ff-file-name-history-use-recentf t
