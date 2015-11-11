@@ -135,6 +135,7 @@
 (use-package powerline
   :ensure t
   :config (progn (powerline-default-theme)
+                 (setq ns-use-srgb-colorspace nil)
                  (add-hook 'after-init-hook 'powerline-reset)))
 
 ;; Rainbow mode
