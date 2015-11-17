@@ -178,6 +178,15 @@
   :defer t
   :config (progn (add-hook 'web-mode-hook 'emmet-mode)))
 
+;; YAML mode
+(use-package yaml-mode
+  :ensure t
+  :defer t
+  :mode (("\\.yml$" .  yaml-mode)
+         ("\\.yaml$" . yaml-mode))
+  :bind (("C-m" . newline-and-indent))
+)
+
 ;; Yasnippets
 (use-package yasnippet
   :ensure t
