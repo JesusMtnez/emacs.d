@@ -193,7 +193,16 @@
   :defer t
   :init (progn (setq yas-snippet-dirs (cons (concat user-emacs-directory "snippets") '()))
                (setq yas-verbosity 1)
-               (yas-global-mode t)))
+               (yas-global-mode t))
+)
+
+;; Zoom Window (like tmux zoom)
+(use-package zoom-window
+  :ensure t
+  :defer t
+  :config (progn (setq zoom-window-mode-line-color "DarkRed"))
+  :bind (("C-x C-z" . zoom-window-zoom))
+)
 
 ;; misc package for extra functionality
 (require 'misc)
