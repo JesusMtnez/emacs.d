@@ -59,8 +59,8 @@
 (use-package git-gutter
   :ensure t
   :if (not window-system) ; Only in terminal
-  :init (global-git-gutter-mode)
-  :config (progn (git-gutter:linum-setup)
+  :config (progn (add-hook 'after-init-hook 'global-git-gutter-mode)
+                 (git-gutter:linum-setup)
                  (setq git-gutter:hide-gutter t))
   :diminish (git-gutter-mode . "gg")
 )
@@ -69,8 +69,8 @@
 (use-package git-gutter-fringe+
   :ensure t
   :if window-system ; Only when window-system
-  :init (progn (global-git-gutter+-mode))
-  :config (progn (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
+  :config (progn (add-hook 'after-init-hook 'global-git-gutter+-mode)
+                 (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
                  (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
                  (define-key git-gutter+-mode-map (kbd "C-x v =") 'git-gutter+-show-hunk)
                  (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
@@ -79,7 +79,7 @@
                  (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-define)
                  (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
                  (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer))
-  :diminish (git-gutter+-mode . "gg")
+  :diminish (git-gutter+-mode . "gg+")
 )
 
 ;; Helm
