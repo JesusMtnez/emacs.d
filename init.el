@@ -55,6 +55,16 @@
   :ensure t
   :defer t)
 
+;; git-gutter
+(use-package git-gutter
+  :ensure t
+  :if (not window-system) ; Only in terminal
+  :init (global-git-gutter-mode)
+  :config (progn (git-gutter:linum-setup)
+                 (setq git-gutter:hide-gutter t))
+  :diminish (git-gutter-mode . "gg")
+)
+
 ;; git-gutter-fringe+
 (use-package git-gutter-fringe+
   :ensure t
