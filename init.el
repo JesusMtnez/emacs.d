@@ -106,10 +106,8 @@
                  (helm-mode t)
                  (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
                  (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-                 (define-key helm-map (kbd "C-z") 'helm-select-action) ; list actions using C-z
-                 )
-  :diminish helm-mode
-  )
+                 (define-key helm-map (kbd "C-z") 'helm-select-action)) ; list actions using C-z
+  :diminish helm-mode)
 
 ;; Highlight-Characters
 (use-package highlight-chars
@@ -164,7 +162,7 @@
 (use-package powerline
   :ensure t
   :config (progn (powerline-default-theme)
-                 (setq ns-use-srgb-colorspace nil)
+                 (setq ns-use-srgb-colorspace t)
                  (add-hook 'after-init-hook 'powerline-reset)))
 
 ;; Rainbow mode
@@ -218,8 +216,7 @@
   :defer t
   :mode (("\\.yml$" .  yaml-mode)
          ("\\.yaml$" . yaml-mode))
-  :bind (("C-m" . newline-and-indent))
-)
+  :bind (("C-m" . newline-and-indent)))
 
 ;; Yasnippets
 (use-package yasnippet
@@ -227,16 +224,14 @@
   :defer t
   :init (progn (setq yas-snippet-dirs (cons (concat user-emacs-directory "snippets") '()))
                (setq yas-verbosity 1)
-               (yas-global-mode t))
-)
+               (yas-global-mode t)))
 
 ;; Zoom Window (like tmux zoom)
 (use-package zoom-window
   :ensure t
   :defer t
   :config (progn (setq zoom-window-mode-line-color "DarkRed"))
-  :bind (("C-x C-z" . zoom-window-zoom))
-)
+  :bind (("C-x C-z" . zoom-window-zoom)))
 
 ;; misc package for extra functionality
 (require 'misc)
@@ -266,6 +261,7 @@
 ;; Font configuration
 (set-face-attribute 'default nil :font "Hack")
 (set-frame-font "Hack 9" nil t)
+
 ;; Encoding configuration
 (prefer-coding-system 'utf-8)
 (set-default-coding-systems 'utf-8)
