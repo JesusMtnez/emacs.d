@@ -271,13 +271,12 @@
 (set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-;; Remap left-option-key to meta-key
+
+;; OSX Specific configurations
 (if (eq system-type 'darwin)
-  (setq ns-command-modifier 'meta)
-  (setq ns-option-modifier 'meta)
-)
-(setq ns-right-command-modifier 'none)
-(setq ns-right-option-modifier 'none)
+    (progn (setq mac-command-modifier 'meta) ; left-cmd-key as meta-key
+           (setq mac-option-modifier 'meta) ; left-option-key as meta-key
+           (setq mac-right-option-modifier nil) ; right-option-key as option-key
 ;; (setq inhibit-startup-screen t)
 
 ;; Key bindings
