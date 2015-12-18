@@ -257,6 +257,7 @@
 (global-visual-line-mode t)
 (setq make-backup-files nil)
 (setq-default cursor-type 'bar)
+(put 'downcase-region 'disabled nil)
 
 ;; Font configuration
 (set-face-attribute 'default nil :font "Hack")
