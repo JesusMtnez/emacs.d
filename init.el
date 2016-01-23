@@ -289,9 +289,16 @@
              (menu-bar-mode t)))) ; Restore menu-bar to fix: https://github.com/railwaycat/emacs-mac-port/issues/79
 ;; (setq inhibit-startup-screen t)
 
+;; Functions
+(defun reload-configuration ()
+  "Reload configuration"
+  (interactive)
+  (load-file user-init-file))
+
 ;; Key bindings
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+(global-set-key (kbd "<f5>") 'reload-configuration)
 
 ;; Customizations
 (setq custom-file (concat user-emacs-directory "custom.el"))
