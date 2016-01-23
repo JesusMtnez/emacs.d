@@ -259,6 +259,13 @@
 (setq-default cursor-type 'bar)
 (put 'downcase-region 'disabled nil)
 
+;; Smooth scrolling
+(setq redisplay-dont-pause t
+      scroll-margin 5
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
 ;; Font configuration
 (set-face-attribute 'default nil :font "Hack")
 (set-frame-font "Hack 9" nil t)
