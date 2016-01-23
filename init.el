@@ -286,5 +286,5 @@
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
 
-(if (file-exists-p "~/.emacs.d/localrc.el")
-    (load "~/.emacs.d/localrc.el"))
+;; Local configurations
+(load (concat user-emacs-directory "localrc.el") 'noerror)
