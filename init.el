@@ -1,3 +1,7 @@
+;; Personal information
+(setq user-full-name "JesusMtnez"
+      user-mail-address "jesusmartinez93@gmail.com")
+
 ;; Improve Emacs performance
 (setq max-specpdl-size (* max-specpdl-size 15)
       max-lisp-eval-depth (* max-lisp-eval-depth 30))
