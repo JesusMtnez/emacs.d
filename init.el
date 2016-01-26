@@ -67,8 +67,7 @@
   :config (progn (add-hook 'after-init-hook 'global-git-gutter-mode)
                  (git-gutter:linum-setup)
                  (setq git-gutter:hide-gutter t))
-  :diminish (git-gutter-mode . "gg")
-)
+  :diminish (git-gutter-mode . "gg"))
 
 ;; git-gutter-fringe+
 (use-package git-gutter-fringe+
@@ -84,8 +83,7 @@
                  (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-define)
                  (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
                  (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer))
-  :diminish (git-gutter+-mode . "gg+")
-)
+  :diminish (git-gutter+-mode . "gg+"))
 
 ;; Helm
 (use-package helm
@@ -239,6 +237,9 @@
 
 ;; misc package for extra functionality
 (require 'misc)
+
+;; Scala-IDE configuration
+(load (concat user-emacs-directory "scala-conf.el") 'noerror)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; My personal configurations ;;
