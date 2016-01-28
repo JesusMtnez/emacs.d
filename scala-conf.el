@@ -17,10 +17,14 @@
   (insert ".")
   (company-complete))
 
+(defun scala/local-keys ()
+  "Set up local key bindings"
+  (local-set-key (kbd ".") 'scala/completing-dot))
+
 ;; ENSIME
 (use-package ensime
   :ensure t
   :defer t
-  :bind (("." . scala/completing-dot))
   :config (progn (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
-                 (add-hook 'ensime-mode-hook #'scala/enable-eldoc)))
+                 (add-hook 'ensime-mode-hook 'scala/enable-eldoc)
+                 (add-hook 'ensime-mode-hook 'scala/local-keys)))
