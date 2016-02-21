@@ -263,6 +263,7 @@
 (setq make-backup-files nil)
 (setq-default cursor-type 'bar)
 (put 'downcase-region 'disabled nil)
+;; (setq inhibit-startup-screen t)
 
 ;; Smooth scrolling
 (setq redisplay-dont-pause t
@@ -281,15 +282,6 @@
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
 
-;; OSX Specific configurations
-(if (eq system-type 'darwin)
-    (progn (setq mac-command-modifier 'meta) ; left-cmd-key as meta-key
-           (setq mac-option-modifier 'meta) ; left-option-key as meta-key
-           (setq mac-right-option-modifier nil) ; right-option-key as option-key
-           (when window-system
-             (menu-bar-mode t)))) ; Restore menu-bar to fix: https://github.com/railwaycat/emacs-mac-port/issues/79
-;; (setq inhibit-startup-screen t)
-
 ;; Functions
 (defun reload-configuration ()
   "Reload configuration"
@@ -304,6 +296,10 @@
 ;; Customizations
 (setq custom-file (concat user-emacs-directory "custom.el"))
 (load custom-file 'noerror)
+
+;; OSX Specific configurations
+(if (eq system-type 'darwin)
+    (load (concat user-emacs-directory "macosx-conf.el") 'noerror))
 
 ;; Local configurations
 (load (concat user-emacs-directory "localrc.el") 'noerror)
