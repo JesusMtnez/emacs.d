@@ -44,11 +44,6 @@
   :ensure t
   :defer t)
 
-;; Company Tern Backend
-(use-package company-tern
-  :ensure t
-  :defer t)
-
 ;; Company
 (use-package company
   :ensure t
@@ -117,13 +112,6 @@
   :config (progn (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
                  (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)))
 
-;; JS2-mode
-(use-package js2-mode
-  :ensure t
-  :defer t
-  :config (progn (add-hook 'js2-mode-hook (lambda() (tern-mode t))))
-  :mode (("\\.js" . js2-mode)))
-
 ;; Magit
 (use-package magit
   :ensure t
@@ -176,11 +164,6 @@
 (use-package rainbow-delimiters
   :ensure t
   :config (progn (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode)))
-
-;; Tern
-(use-package tern
-  :ensure t
-  :defer t)
 
 ;; Undo-Tree
 (use-package undo-tree
