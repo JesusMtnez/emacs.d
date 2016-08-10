@@ -195,6 +195,12 @@
   :defer t
   :config (progn (add-hook 'web-mode-hook 'emmet-mode)))
 
+;; Which-key
+(use-package which-key
+  :ensure t
+  :defer t
+  :init (progn (which-key-mode)))
+
 ;; YAML mode
 (use-package yaml-mode
   :ensure t
