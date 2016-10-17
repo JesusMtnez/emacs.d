@@ -3,6 +3,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (ensime zoom-window yasnippet yaml-mode which-key emmet-mode web-mode undo-tree rainbow-delimiters rainbow-mode powerline neotree move-text markdown-mode magit highlight-chars helm git-gutter-fringe+ git-gutter company color-theme-solarized color-theme auto-package-update use-package)))
  '(sh-basic-offset 2)
  '(sh-indentation 2))
 (custom-set-faces
