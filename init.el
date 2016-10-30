@@ -263,6 +263,8 @@
 ;; Font configuration
 (set-face-attribute 'default nil :font "Hack")
 (set-frame-font "Hack 9" nil t)
+(when (member "FontAwesome" (font-family-list))
+  (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))
 
 ;; Encoding configuration
 (prefer-coding-system 'utf-8)
