@@ -1,0 +1,19 @@
+# OS
+.directory
+.DS_store
+
+# Emacs
+elpa
+ac-comphist.dat
+ido.last
+projectile-bookmarks.eld
+auto-save-list/
+url
+recentf
+eshell
+localrc.el
+.last-package-update-day
+ensime/
+
+# Custom
+.backup
