@@ -1,8 +1,8 @@
-# JesusMtnez's Emacs Configuration
-
-![Emacs Logo](https://lists.gnu.org/archive/html/emacs-devel/2015-10/png1QmSFTZR5d.png)
+# [![Emacs](http://i.imgur.com/TANBZR2.png)]() JesusMtnez's Emacs Configuration [![Emacs](http://i.imgur.com/TANBZR2.png)]()
 
 ## Installation ##
+
+> TODO
 
 ### SSH ###
 
