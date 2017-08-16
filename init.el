@@ -11,6 +11,7 @@
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
+(require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
 
 ;;;;;;;;;;;;;;;;
 ;; OLD CONFIG ;;
@@ -189,14 +190,6 @@
   :mode (("\\.yml$" .  yaml-mode)
          ("\\.yaml$" . yaml-mode))
   :bind (("C-m" . newline-and-indent)))
-
-;; Yasnippets
-(use-package yasnippet
-  :ensure t
-  :defer t
-  :init (progn (setq yas-snippet-dirs (cons (concat user-emacs-directory "snippets") '()))
-               (setq yas-verbosity 1)
-               (yas-global-mode t)))
 
 ;; Zoom Window (like tmux zoom)
 (use-package zoom-window
