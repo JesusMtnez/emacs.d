@@ -7,22 +7,11 @@
 ;(package-initialize)
 ; TODO Improve how everything is loaded
 (require 'core (concat user-emacs-directory "core/core"))
+(require 'core-packages (concat user-emacs-directory "core/core-packages"))
 
-;; MELPA and Marmalade repos for packages.
-(require 'package)
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
-(package-initialize)
-
-;; Bootstrap 'use-package
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-
-(eval-when-compile
-  (require 'use-package))
-(require 'bind-key)
-(require 'diminish)
-
+;;;;;;;;;;;;;;;;
+;; OLD CONFIG ;;
+;;;;;;;;;;;;;;;;
 ;; Auto Package Update
 (use-package auto-package-update
   :ensure t
