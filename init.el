@@ -10,6 +10,7 @@
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
+(require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
 
@@ -95,15 +96,6 @@
   :defer t
   :init (progn (global-git-commit-mode t))
   :config (progn (setq magit-last-seen-setup-instructions "1.4.0")))
-
-;; Markdown-mode
-(use-package markdown-mode
-  :ensure t
-  :defer t
-  :mode (("\\.md" . gfm-mode)
-         ("\\.mdown" . gfm-mode)
-         ("\\.markdown" . gfm-mode))
-  :config (progn (set-variable 'markdown-indent-on-enter nil)))
 
 ;; Move-text
 (use-package move-text
