@@ -16,11 +16,6 @@
 ;;;;;;;;;;;;;;;;
 ;; OLD CONFIG ;;
 ;;;;;;;;;;;;;;;;
-;; Auto Package Update
-(use-package auto-package-update
-  :ensure t
-  :defer t
-  :config (progn (setq auto-package-update-delete-old-versions t)))
 
 ;; Common Lisp
 (use-package cl
