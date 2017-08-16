@@ -10,6 +10,8 @@
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
+(require 'module-sh (concat user-emacs-directory "modules/module-sh"))
+
 ;;;;;;;;;;;;;;;;
 ;; OLD CONFIG ;;
 ;;;;;;;;;;;;;;;;
