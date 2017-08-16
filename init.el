@@ -1,10 +1,12 @@
-;; Personal information
-(setq user-full-name "JesusMtnez"
-      user-mail-address "jesusmartinez93@gmail.com")
+;;; init.el
+;;
+;; Author:  JesusMtnez <jesusmartinez93@gmail.com>
+;; URL:     https://gitlab.com/JesusMtnez/emacs.d
+;; License: MIT
 
-;; Improve Emacs performance
-(setq max-specpdl-size (* max-specpdl-size 15)
-      max-lisp-eval-depth (* max-lisp-eval-depth 30))
+;(package-initialize)
+; TODO Improve how everything is loaded
+(require 'core (concat user-emacs-directory "core/core"))
 
 ;; MELPA and Marmalade repos for packages.
 (require 'package)
@@ -265,12 +267,6 @@
 (set-frame-font "Hack 9" nil t)
 (when (member "FontAwesome" (font-family-list))
   (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))
-
-;; Encoding configuration
-(prefer-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
 
 ;; Functions
 (defun reload-configuration ()
