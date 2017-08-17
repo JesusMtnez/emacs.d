@@ -15,6 +15,7 @@
 (require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
+(require 'module-yaml (concat user-emacs-directory "modules/module-yaml"))
 
 ;;;;;;;;;;;;;;;;
 ;; OLD CONFIG ;;
@@ -130,13 +131,6 @@
   :defer t
   :init (progn (which-key-mode)))
 
-;; YAML mode
-(use-package yaml-mode
-  :ensure t
-  :defer t
-  :mode (("\\.yml$" .  yaml-mode)
-         ("\\.yaml$" . yaml-mode))
-  :bind (("C-m" . newline-and-indent)))
 
 ;; Zoom Window (like tmux zoom)
 (use-package zoom-window
