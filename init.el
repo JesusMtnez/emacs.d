@@ -11,6 +11,7 @@
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
 (require 'module-company (concat user-emacs-directory "modules/module-company"))
+(require 'module-git (concat user-emacs-directory "modules/module-git"))
 (require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
@@ -23,31 +24,6 @@
 (use-package cl
   :ensure t
   :defer t)
-
-;; git-gutter
-(use-package git-gutter
-  :ensure t
-  :if (not window-system) ; Only in terminal
-  :config (progn (add-hook 'after-init-hook 'global-git-gutter-mode)
-                 (git-gutter:linum-setup)
-                 (setq git-gutter:hide-gutter t))
-  :diminish (git-gutter-mode . "gg"))
-
-;; git-gutter-fringe+
-(use-package git-gutter-fringe+
-  :ensure t
-  :if window-system ; Only when window-system
-  :config (progn (add-hook 'after-init-hook 'global-git-gutter+-mode)
-                 (define-key git-gutter+-mode-map (kbd "C-x n") 'git-gutter+-next-hunk)
-                 (define-key git-gutter+-mode-map (kbd "C-x p") 'git-gutter+-previous-hunk)
-                 (define-key git-gutter+-mode-map (kbd "C-x v =") 'git-gutter+-show-hunk)
-                 (define-key git-gutter+-mode-map (kbd "C-x r") 'git-gutter+-revert-hunks)
-                 (define-key git-gutter+-mode-map (kbd "C-x t") 'git-gutter+-stage-hunks)
-                 (define-key git-gutter+-mode-map (kbd "C-x c") 'git-gutter+-commit)
-                 (define-key git-gutter+-mode-map (kbd "C-x C") 'git-gutter+-stage-and-define)
-                 (define-key git-gutter+-mode-map (kbd "C-x C-y") 'git-gutter+-stage-and-commit-whole-buffer)
-                 (define-key git-gutter+-mode-map (kbd "C-x U") 'git-gutter+-unstage-whole-buffer))
-  :diminish (git-gutter+-mode . "gg+"))
 
 ;; Helm
 (use-package helm
@@ -80,13 +56,6 @@
   :ensure t
   :config (progn (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
                  (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace)))
-
-;; Magit
-(use-package magit
-  :ensure t
-  :defer t
-  :init (progn (global-git-commit-mode t))
-  :config (progn (setq magit-last-seen-setup-instructions "1.4.0")))
 
 ;; Move-text
 (use-package move-text
