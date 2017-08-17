@@ -5,9 +5,10 @@
 ;; License: MIT
 
 ;(package-initialize)
-; TODO Improve how everything is loaded
+;; TODO Improve how everything is loaded
 (require 'core (concat user-emacs-directory "core/core"))
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
+(require 'core-helm (concat user-emacs-directory "core/core-helm"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
 (require 'module-company (concat user-emacs-directory "modules/module-company"))
@@ -25,32 +26,6 @@
 (use-package cl
   :ensure t
   :defer t)
-
-;; Helm
-(use-package helm
-  :ensure t
-  :defer t
-  :bind (("C-c h" . helm-command-prefix)
-         ("C-x C-f" . helm-find-files)
-         ("C-x b" . helm-buffers-list)
-         ("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring))
-  :config (progn (require 'helm-config)
-                 (setq helm-split-window-in-side-p t
-                       helm-move-to-line-cycle-in-source t ; Circle when using helm-next/previous-line
-                       helm-ff-search-library-in-sexp t
-                       helm-scroll-amount 8
-                       helm-ff-file-name-history-use-recentf t
-                       helm-autoresize-mode t;
-                       helm-autoresize-max-height 20
-                       helm-mode-fuzzy-match t
-                       helm-completion-in-region-fuzzy-match t
-                       helm-M-x-fuzzy-match t)
-                 (helm-mode t)
-                 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-                 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-                 (define-key helm-map (kbd "C-z") 'helm-select-action)) ; list actions using C-z
-  :diminish helm-mode)
 
 ;; Highlight-Characters
 (use-package highlight-chars
