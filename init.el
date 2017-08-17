@@ -10,6 +10,7 @@
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
+(require 'module-company (concat user-emacs-directory "modules/module-company"))
 (require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
@@ -22,16 +23,6 @@
 (use-package cl
   :ensure t
   :defer t)
-
-;; Company
-(use-package company
-  :ensure t
-  :config (progn (add-hook 'after-init-hook 'global-company-mode)
-                 (setq company-idle-delay 0.1)          ; Reduce company auto complete start time
-                 (setq company-minimum-prefix-length 1) ; Reduce prefix to start completion
-                 (setq company-show-numbers t))         ; Show number to quick access with M-number
-  :diminish (company-mode . "CM"))
-;; TODO: Company integration with helm: https://github.com/yasuyk/helm-company
 
 ;; git-gutter
 (use-package git-gutter
