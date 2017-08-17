@@ -7,10 +7,9 @@
               doom-themes-enable-italic t)
   :config (load-theme 'doom-one t))
 
-;; (use-package atom-dark-theme
-;;   ; repo: https://github.com/whitlockjc/atom-dark-theme-emacs
-;;   :ensure t
-;;   :config (load-theme 'atom-dark t))
+;; Other alternatives:
+;; - atom-one-dark-theme: https://github.com/jonathanchu/atom-one-dark-theme/
+;; - atom-dark-theme-emacs:  https://github.com/whitlockjc/atom-dark-theme-emacs
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
