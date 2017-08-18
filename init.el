@@ -14,6 +14,7 @@
 (require 'module-company (concat user-emacs-directory "modules/module-company"))
 (require 'module-docker (concat user-emacs-directory "modules/module-docker"))
 (require 'module-git (concat user-emacs-directory "modules/module-git"))
+(require 'module-json (concat user-emacs-directory "modules/module-json"))
 (require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
