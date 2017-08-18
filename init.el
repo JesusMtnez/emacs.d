@@ -17,6 +17,7 @@
 (require 'module-json (concat user-emacs-directory "modules/module-json"))
 (require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
+(require 'module-text (concat user-emacs-directory "modules/module-text"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
 (require 'module-yaml (concat user-emacs-directory "modules/module-yaml"))
 
