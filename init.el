@@ -9,6 +9,7 @@
 (require 'core (concat user-emacs-directory "core/core"))
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
 (require 'core-helm (concat user-emacs-directory "core/core-helm"))
+(require 'core-modeline (concat user-emacs-directory "core/core-modeline"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
 (require 'module-company (concat user-emacs-directory "modules/module-company"))
