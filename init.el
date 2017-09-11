@@ -8,6 +8,7 @@
 ;; TODO Improve how everything is loaded
 (require 'core (concat user-emacs-directory "core/core"))
 (require 'core-packages (concat user-emacs-directory "core/core-packages"))
+(require 'core-projects (concat user-emacs-directory "core/core-projects"))
 (require 'core-helm (concat user-emacs-directory "core/core-helm"))
 (require 'core-modeline (concat user-emacs-directory "core/core-modeline"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
@@ -20,6 +21,7 @@
 (require 'module-sh (concat user-emacs-directory "modules/module-sh"))
 (require 'module-text (concat user-emacs-directory "modules/module-text"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
+(require 'module-web (concat user-emacs-directory "modules/module-web"))
 (require 'module-yaml (concat user-emacs-directory "modules/module-yaml"))
 
 ;;;;;;;;;;;;;;;;
