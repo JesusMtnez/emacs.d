@@ -12,6 +12,12 @@
 (defvar modules-dir (concat emacs-dir "modules/")
   "Where configuration modules are stored.")
 
+(defvar local-dir (concat emacs-dir "local/")
+  "Root directory for local Emacs files.")
+
+(defvar cache-dir (concat local-dir "cache/")
+  "Where volatile files are storaged.")
+
 ;;Personal information
 (setq user-full-name "JesusMtnez"
       user-mail-address "jesusmartinez93@gmail.com")
