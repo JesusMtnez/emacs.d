@@ -5,9 +5,9 @@
   :ensure t
   :defer t
   :mode (("\\.zsh$" . sh-mode)
-         ("/zshrc$" . sh-mode)))
+         ("/zshrc$" . sh-mode))
   :config (setq sh-basic-offset 2
-                sh-indentation 2)
+                sh-indentation 2))
 
 ;; TODO Configure 'insert-shebang'
 ;; (use-package insert-shebang
