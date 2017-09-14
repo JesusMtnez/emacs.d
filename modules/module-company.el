@@ -4,7 +4,7 @@
 ;; Company
 (use-package company
   ; repo: https://github.com/company-mode/company-mode
-  :ensure t
+  :demand
   :config (progn (add-hook 'after-init-hook 'global-company-mode)
                  (setq company-idle-delay 0.1)          ; Reduce company auto complete start time
                  (setq company-minimum-prefix-length 1) ; Reduce prefix to start completion

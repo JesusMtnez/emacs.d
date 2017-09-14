@@ -3,8 +3,6 @@
 
 (use-package helm
   ; repo: https://github.com/emacs-helm/helm
-  :ensure t
-  :defer t
   :bind (("C-c h" . helm-command-prefix)
          ("C-x C-f" . helm-find-files)
          ("C-x b" . helm-buffers-list)

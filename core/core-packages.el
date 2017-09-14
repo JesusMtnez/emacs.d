@@ -17,11 +17,12 @@
 (require 'bind-key)
 (require 'diminish)
 
+(setq use-package-always-defer t
+      use-package-always-ensure nil)
+
 ;; Auto Package Update
 (use-package auto-package-update
   ; repo: https://github.com/rranelli/auto-package-update.el
-  :ensure t
-  :defer t
   :config (setq auto-package-update-delete-old-versions t))
 
 (provide 'core-packages)

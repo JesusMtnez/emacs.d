@@ -2,8 +2,6 @@
 
 (use-package markdown-mode
   ; repo: https://github.com/jrblevin/markdown-mode
-  :ensure t
-  :defer t
   :mode (("\\.md" . gfm-mode)
          ("\\.mdown" . gfm-mode)
          ("\\.markdown" . gfm-mode))

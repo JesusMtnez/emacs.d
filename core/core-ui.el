@@ -2,7 +2,7 @@
 
 (use-package doom-themes
   ; repo: https://github.com/hlissner/emacs-doom-themes
-  :ensure t
+  :demand
   :init (setq doom-themes-enable-bold t
               doom-themes-enable-italic t)
   :config (load-theme 'doom-one t))
@@ -13,7 +13,7 @@
 
 (use-package dashboard
   ; repo: https://github.com/rakanalh/emacs-dashboard
-  :ensure t
+  :demand
   :config
   (dashboard-setup-startup-hook)
   (setq dashboard-items '((projects  . 5)

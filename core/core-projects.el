@@ -2,7 +2,7 @@
 
 (use-package projectile
   ; repo: https://github.com/bbatsov/projectile
-  :ensure t
+  :demand
   :init
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien

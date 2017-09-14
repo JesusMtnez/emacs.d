@@ -2,8 +2,6 @@
 
 (use-package sh-script
   ; Built-in mode for sh
-  :ensure t
-  :defer t
   :mode (("\\.zsh$" . sh-mode)
          ("/zshrc$" . sh-mode))
   :config (setq sh-basic-offset 2

@@ -2,8 +2,6 @@
 
 (use-package yaml-mode
   ; repo: https://github.com/yoshiki/yaml-mode
-  :ensure t
-  :defer t
   :mode (("\\.yml$" .  yaml-mode)
          ("\\.yaml$" . yaml-mode))
   :bind (("C-m" . newline-and-indent)))

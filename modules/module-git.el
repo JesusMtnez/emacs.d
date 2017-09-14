@@ -2,7 +2,7 @@
 
 (use-package git-gutter
   ; repo: https://github.com/syohex/emacs-git-gutter
-  :ensure t
+  :demand
   :if (not window-system) ; Only in terminal
   :config (progn (add-hook 'after-init-hook 'global-git-gutter-mode)
                  (git-gutter:linum-setup)

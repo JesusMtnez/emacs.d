@@ -3,8 +3,6 @@
 
 (use-package dockerfile-mode
   ; repo: https://github.com/spotify/dockerfile-mode
-  :ensure t
-  :defer t
   :mode (("\\.dockerfile" . dockerfile-mode)
          ("Dockerfile\\'" . dockerfile-mode)))
 
