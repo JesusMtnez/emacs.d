@@ -5,8 +5,8 @@
   :mode (("\\.md" . gfm-mode)
          ("\\.mdown" . gfm-mode)
          ("\\.markdown" . gfm-mode))
-  :config (setq markdown-indent-on-enter nil
-                markdown-make-))
+  :config
+  (setq markdown-indent-on-enter nil))
 
 ;; TODO Configure 'markdown-toc'
 ;; (use-package markdown-toc
