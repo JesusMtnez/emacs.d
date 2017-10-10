@@ -1,6 +1,6 @@
 ;;; core.el --- the core of the configuration
 
-(defvar version "0.0.1"
+(defvar version "0.1.0"
   "Current version of my configuration.")
 
 (defvar emacs-dir (expand-file-name user-emacs-directory)
