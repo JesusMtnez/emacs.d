@@ -13,6 +13,7 @@
 (require 'core-modeline (concat user-emacs-directory "core/core-modeline"))
 (require 'core-ui (concat user-emacs-directory "core/core-ui"))
 
+(require 'module-ansible (concat user-emacs-directory "modules/module-ansible"))
 (require 'module-company (concat user-emacs-directory "modules/module-company"))
 (require 'module-docker (concat user-emacs-directory "modules/module-docker"))
 (require 'module-git (concat user-emacs-directory "modules/module-git"))
