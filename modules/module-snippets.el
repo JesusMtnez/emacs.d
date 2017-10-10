@@ -2,8 +2,6 @@
 
 ;; Yasnippets
 (use-package yasnippet
-  :ensure t
-  :defer t
   :init
   (setq yas-snippet-dirs (cons (concat user-emacs-directory "snippets") '()))
   (setq yas-verbosity 1)

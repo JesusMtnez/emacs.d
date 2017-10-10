@@ -2,8 +2,6 @@
 
 (use-package move-text
   ; repo: https://github.com/emacsfodder/move-text
-  :ensure t
-  :defer t
   :bind (("M-p" . move-text-up)
          ("M-n" . move-text-down)))
 
