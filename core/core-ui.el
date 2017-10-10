@@ -25,6 +25,31 @@
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
 
+(use-package highlight-chars
+  ; repo: https://github.com/emacsmirror/highlight-chars
+  :config
+  (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
+  (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace))
+
+(use-package rainbow-mode)
+; repo: https://github.com/emacsmirror/rainbow-mode
+
+(use-package rainbow-delimiters
+  ; repo: https://github.com/Fanael/rainbow-delimiters
+  :config
+  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode))
+
+(use-package linum
+  :config
+  (setq linum-format "%4d")
+  (add-hook 'after-init-hook 'global-linum-mode))
+
+(use-package zoom-window
+  ; repo: https://github.com/syohex/emacs-zoom-window
+  :config
+  (setq zoom-window-mode-line-color "DarkRed")
+  :bind (("C-x C-z" . zoom-window-zoom)))
+
 ;; Smooth scrolling
 (setq redisplay-dont-pause t
       scroll-margin 5

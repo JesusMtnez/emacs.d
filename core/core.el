@@ -32,5 +32,28 @@
 (setq locale-coding-system   'utf-8)
 (setq-default buffer-file-coding-system 'utf-8)
 
+(global-unset-key (kbd "C-z"))
+
+;; Personal settings
+(setq-default c-basic-offset 4
+              tab-width 4
+              indent-tabs-mode nil
+              tab-always-indent nil)
+(fset 'yes-or-no-p 'y-or-n-p)
+(show-paren-mode t)
+(setq show-paren-style 'expression)
+(column-number-mode t)
+(electric-pair-mode t)
+(delete-selection-mode t)
+(global-auto-revert-mode t)
+(global-visual-line-mode t)
+(setq make-backup-files nil)
+(setq-default cursor-type 'bar)
+(put 'downcase-region 'disabled nil)
+
+;; Key bindings
+(global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
+(global-set-key (kbd "C-x C-k") 'kill-this-buffer)
+
 (provide 'core)
 ;;; core.el ends here
