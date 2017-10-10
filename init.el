@@ -22,6 +22,7 @@
 (require 'module-text (concat user-emacs-directory "modules/module-text"))
 (require 'module-scala (concat user-emacs-directory "modules/module-scala"))
 (require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
+(require 'module-undo (concat user-emacs-directory "modules/module-undo"))
 (require 'module-web (concat user-emacs-directory "modules/module-web"))
 (require 'module-yaml (concat user-emacs-directory "modules/module-yaml"))
 
