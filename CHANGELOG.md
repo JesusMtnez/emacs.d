@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - First modular configuration
 - [#3] Start versioning
 - [#4] Add CHANGELOG (Yay!)
+- Add LICENSE
 - New cores:
   - `core/core`: Define basic variables.
   - `core/core-packages`: Enable `ensure` and `defer` by default when using `use-package`.
