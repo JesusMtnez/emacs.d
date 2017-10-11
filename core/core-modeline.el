@@ -3,7 +3,7 @@
 ;; Powerline
 (use-package powerline
   ; repo: https://github.com/milkypostman/powerline
-  :ensure t
+  :demand
   :config
   (powerline-default-theme)
   (setq ns-use-srgb-colorspace t)
