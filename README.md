@@ -1,4 +1,7 @@
+[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE.md)
+
 # [![Emacs](http://i.imgur.com/TANBZR2.png)]() JesusMtnez's Emacs Configuration [![Emacs](http://i.imgur.com/TANBZR2.png)]()
+
 
 ## Installation ##
 
@@ -15,3 +18,4 @@ git clone git@gitlab.com:JesusMtnez/emacs.d $HOME/.emacs.d
 ```
 git clone https://gitlab.com/JesusMtnez/emacs.d $HOME/.emacs.d
 ```
+

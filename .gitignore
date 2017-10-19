@@ -15,6 +15,9 @@ localrc.el
 .last-package-update-day
 ensime/
 tramp
+**.projects
+**.cache
+custom.el
 
 # Custom
 .backup
