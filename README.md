@@ -1,4 +1,4 @@
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE.md)
+[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE)
 
 # [![Emacs](http://i.imgur.com/TANBZR2.png)]() JesusMtnez's Emacs Configuration [![Emacs](http://i.imgur.com/TANBZR2.png)]()
 
