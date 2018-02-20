@@ -26,7 +26,8 @@
 (if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
 
 (use-package highlight-chars
-  ; repo: https://github.com/emacsmirror/highlight-chars
+  ; repo: https://github.com/emacsmirror/emacswiki.org/blob/master/highlight-chars.el
+  :load-path "highlight-chars"
   :config
   (add-hook 'font-lock-mode-hook 'hc-highlight-tabs)
   (add-hook 'font-lock-mode-hook 'hc-highlight-trailing-whitespace))
