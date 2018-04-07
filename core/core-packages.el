@@ -6,6 +6,11 @@
 (add-to-list 'package-archives '("melpa"        . "http://melpa.org/packages/") t)
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 
+(setq package-archive-priorities
+      '(("gnu"          . 10)
+        ("melpa"        . 0)
+        ("melpa-stable" . 20)))
+
 (package-initialize)
 
 ;; Bootstrap 'use-package
