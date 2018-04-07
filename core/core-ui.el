@@ -27,6 +27,7 @@
 
 (use-package whitespace
   :demand
+  :diminish global-whitespace-mode
   :init
   (setq whitespace-style '(face tabs trailing))
   (global-whitespace-mode t))

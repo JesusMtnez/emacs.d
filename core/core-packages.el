@@ -15,7 +15,6 @@
 (eval-when-compile
   (require 'use-package))
 (require 'bind-key)
-(require 'diminish)
 
 (setq use-package-always-defer t
       use-package-always-ensure t)
@@ -26,6 +25,8 @@
 (use-package auto-package-update
   ; repo: https://github.com/rranelli/auto-package-update.el
   :config (setq auto-package-update-delete-old-versions t))
+
+(use-package diminish)
 
 (provide 'core-packages)
 ;;; core-packages.el ends here
