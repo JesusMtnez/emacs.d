@@ -1,27 +1,5 @@
 ;;; core.el --- the core of the configuration
 
-(defvar version "0.1.0"
-  "Current version of my configuration.")
-
-(defvar emacs-dir (expand-file-name user-emacs-directory)
-  "The path to this emacs.d directory.")
-
-(defvar core-dir (concat emacs-dir "core/")
-  "Where essential files are stored.")
-
-(defvar modules-dir (concat emacs-dir "modules/")
-  "Where configuration modules are stored.")
-
-(defvar local-dir (concat emacs-dir "local/")
-  "Root directory for local Emacs files.")
-
-(defvar cache-dir (concat local-dir "cache/")
-  "Where volatile files are storaged.")
-
-;;Personal information
-(setq user-full-name "JesusMtnez"
-      user-mail-address "jesusmartinez93@gmail.com")
-
 ;; UTF-8 as the default coding system
 (when (fboundp 'set-charset-priority)
   (set-charset-priority 'unicode))
@@ -55,5 +33,12 @@
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
 
-(provide 'core)
+;; Customizations
+(setq custom-file (concat user-emacs-directory "custom.el"))
+(load custom-file 'noerror)
+
+;; Local configurations
+(load (concat user-emacs-directory "localrc.el") 'noerror)
+
+(provide '00-core)
 ;;; core.el ends here

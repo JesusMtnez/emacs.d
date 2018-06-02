@@ -1,4 +1,4 @@
-;;; core-helm.el --- helm integration
+;;; 40-core-helm.el --- helm integration
 ;; TODO Integrate with https://github.com/emacs-helm/helm-ls-git
 
 (use-package helm
@@ -25,5 +25,5 @@
                  (define-key helm-map (kbd "C-z") 'helm-select-action)) ; list actions using C-z
   :diminish helm-mode)
 
-(provide 'core-helm)
-;;; core-helm.el ends here
+(provide '40-core-helm)
+;;; 40-core-helm.el ends here

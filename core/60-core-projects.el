@@ -1,4 +1,4 @@
-;;; core-projects.el --- projects integration
+;;; 60-core-projects.el --- projects integration
 
 (use-package projectile
   ; repo: https://github.com/bbatsov/projectile
@@ -14,5 +14,5 @@
   :config
   (projectile-global-mode))
 
-(provide 'core-projects)
-;;; core-projects.el ends here
+(provide '60-core-projects)
+;;; 60-core-projects.el ends here
