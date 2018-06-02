@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this p
 - First modular configuration
 - [#3] Start versioning
 - [#4] Add CHANGELOG (Yay!)
+- [#13] Use `el-init` to bootstrap the modular configuration. 
 - Add LICENSE
 - New cores:
   - `core/core`: Define basic variables.

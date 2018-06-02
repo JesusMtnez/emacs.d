@@ -1,4 +1,4 @@
-;;; core-modeline.el --- Modeline configuration
+;;; 30-core-modeline.el --- Modeline configuration
 
 ;; Powerline
 (use-package powerline
@@ -9,5 +9,5 @@
   (setq ns-use-srgb-colorspace t)
   (add-hook 'after-init-hook 'powerline-reset))
 
-(provide 'core-modeline)
-;;; core-modeline.el ends here
+(provide '30-core-modeline)
+;;; 30-core-modeline.el ends here

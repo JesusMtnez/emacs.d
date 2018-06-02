@@ -1,4 +1,4 @@
-;;; module-company.el --- company integration
+;;; 50-core-company.el --- company integration
 ;; TODO Company integration with helm: https://github.com/yasuyk/helm-company
 
 ;; Company
@@ -11,5 +11,5 @@
                  (setq company-show-numbers t))         ; Show number to quick access with M-number
   :diminish (company-mode . "CM"))
 
-(provide 'module-company)
-;;; module-company.el ends here
+(provide '50-core-company)
+;;; 50-core-company.el ends here

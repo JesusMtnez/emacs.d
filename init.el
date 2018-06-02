@@ -1,34 +1,59 @@
-;;; init.el
+;;; init.el -- Emacs Bootstrap
 ;;
 ;; Author:  JesusMtnez <jesusmartinez93@gmail.com>
 ;; URL:     https://gitlab.com/JesusMtnez/emacs.d
 ;; License: MIT
 
-;(package-initialize)
-;; TODO Improve how everything is loaded
-(require 'core (concat user-emacs-directory "core/core"))
-(require 'core-packages (concat user-emacs-directory "core/core-packages"))
-(require 'core-projects (concat user-emacs-directory "core/core-projects"))
-(require 'core-helm (concat user-emacs-directory "core/core-helm"))
-(require 'core-modeline (concat user-emacs-directory "core/core-modeline"))
-(require 'core-ui (concat user-emacs-directory "core/core-ui"))
+(defvar version "0.1.0"
+  "Current version of my configuration.")
 
-(require 'module-company (concat user-emacs-directory "modules/module-company"))
-(require 'module-docker (concat user-emacs-directory "modules/module-docker"))
-(require 'module-git (concat user-emacs-directory "modules/module-git"))
-(require 'module-json (concat user-emacs-directory "modules/module-json"))
-(require 'module-markdown (concat user-emacs-directory "modules/module-markdown"))
-(require 'module-sh (concat user-emacs-directory "modules/module-sh"))
-(require 'module-text (concat user-emacs-directory "modules/module-text"))
-(require 'module-scala (concat user-emacs-directory "modules/module-scala"))
-(require 'module-snippets (concat user-emacs-directory "modules/module-snippets"))
-(require 'module-undo (concat user-emacs-directory "modules/module-undo"))
-(require 'module-web (concat user-emacs-directory "modules/module-web"))
-(require 'module-yaml (concat user-emacs-directory "modules/module-yaml"))
+(defvar emacs-dir (expand-file-name user-emacs-directory)
+  "The path to this emacs.d directory.")
 
-;; Customizations
-(setq custom-file (concat user-emacs-directory "custom.el"))
-(load custom-file 'noerror)
+(defvar core-dir  "core/"
+  "Where essential files are stored.")
 
-;; Local configurations
-(load (concat user-emacs-directory "localrc.el") 'noerror)
+(defvar modules-dir "modules/"
+  "Where configuration modules are stored.")
+
+(defvar local-dir (concat emacs-dir "local/")
+  "Root directory for local Emacs files.")
+
+(defvar cache-dir (concat local-dir "cache/")
+  "Where volatile files are storaged.")
+
+(require 'package)
+
+;; MELPA repos for packages.
+(add-to-list 'package-archives '("melpa"        . "http://melpa.org/packages/") t)
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
+(setq package-archive-priorities
+      '(("gnu"          . 10)
+        ("melpa"        . 20)
+        ("melpa-stable" . 0)))
+
+(package-initialize)
+
+;; Bootstrap 'use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+(eval-when-compile
+  (require 'use-package))
+
+(require 'bind-key)
+
+(setq use-package-always-defer t
+      use-package-always-ensure t)
+
+(use-package diminish)
+
+;; Configuraion loading
+(use-package el-init)
+
+(el-init-load emacs-dir
+  :subdirectories (list core-dir modules-dir))
+  
+;;; init.el ends here

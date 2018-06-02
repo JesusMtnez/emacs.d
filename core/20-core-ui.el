@@ -1,4 +1,4 @@
-;;; core-ui.el --- User Insterface core
+;;; 20-core-ui.el --- User Insterface core
 
 (use-package doom-themes
   ; repo: https://github.com/hlissner/emacs-doom-themes
@@ -64,5 +64,5 @@
 (when (member "FontAwesome" (font-family-list))
   (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))
 
-(provide 'core-ui)
-;;; core-ui.el ends here
+(provide '20-core-ui)
+;;; 20-core-ui.el ends here
