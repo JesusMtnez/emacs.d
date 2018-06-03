@@ -1,0 +1,13 @@
+image: silex/emacs:26.1-alpine
+
+stages:
+  - build
+  #- test
+
+
+build:
+  stage: build
+  before_script:
+    - ln -sf /builds/JesusMtnez/emacs.d /root/.emacs.d
+  script:
+    - emacs --debug-init --batch -u root
