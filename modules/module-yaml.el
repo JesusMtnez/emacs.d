@@ -6,5 +6,7 @@
          ("\\.yaml$" . yaml-mode))
   :bind (("C-m" . newline-and-indent)))
 
+(use-package gitlab-ci-mode)
+
 (provide 'module-yaml)
 ;;; module-yaml.el ends here
