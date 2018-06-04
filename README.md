@@ -1,6 +1,6 @@
 [comment]: # (Start Badges)
 
-[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE)
+[![MIT](https://img.shields.io/github/license/mashape/apistatus.svg)](/LICENSE) [![pipeline status](https://gitlab.com/JesusMtnez/emacs.d/badges/master/pipeline.svg)](https://gitlab.com/JesusMtnez/emacs.d/pipelines)
 
 [comment]: # (End Badges)
 
