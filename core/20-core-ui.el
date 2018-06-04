@@ -2,6 +2,7 @@
 
 (use-package doom-themes
   ; repo: https://github.com/hlissner/emacs-doom-themes
+  :preface (defvar region-fg nil) ; see https://github.com/hlissner/emacs-doom-themes/issues/166
   :demand
   :init (setq doom-themes-enable-bold t
               doom-themes-enable-italic t)
