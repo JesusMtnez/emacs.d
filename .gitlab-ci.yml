@@ -1,13 +1,22 @@
-image: silex/emacs:26.1-alpine
-
-stages:
-  - build
-  #- test
-
-
-build:
+.build_template: &build_def
+  image: silex/emacs:$EMACS_VERSION-alpine
   stage: build
   before_script:
     - ln -sf /builds/JesusMtnez/emacs.d /root/.emacs.d
   script:
     - emacs --debug-init --batch -u root
+
+stages:
+  - build
+  #- test
+
+build:25.3:
+  variables:
+    EMACS_VERSION: "25.3"
+  <<: *build_def
+
+build:26.1:
+  variables:
+    EMACS_VERSION: "26.1"
+  <<: *build_def
+
