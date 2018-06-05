@@ -11,12 +11,18 @@
         scala-indent:operator-strategy))
 
 (use-package sbt-mode
+  :after scala-mode
   :commands sbt-start sbt-command)
 
 ;; ENSIME
 (use-package ensime
   :pin "melpa-stable"
-  :commands (ensime ensime-mode ensime-scala-mode-hook))
+  :commands (ensime ensime-mode ensime-scala-mode-hook)
+  :hook (scala-mode . ensime-mode)
+  :config
+  (add-hook 'ensime-mode-hook #'eldoc-mode)
+  (setq ensime-startup-notification nil
+        ensime-eldoc-hints 'all))
 
 (provide 'module-scala)
 ;;; module-scala.el ends here
