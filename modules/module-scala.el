@@ -8,6 +8,16 @@
                   (ensime-type-at-point))))
   (eldoc-mode +1))
 
+(defun scala/completing-dot ()
+  "Insert a period and show company completions."
+  (interactive "*")
+  (when (s-matches? (rx (+ (not space)))
+                    (buffer-substring (line-beginning-position) (point)))
+    (delete-horizontal-space t))
+  (company-abort)
+  (insert ".")
+  (company-complete))
+
 (use-package scala-mode
   ; repo: https://github.com/ensime/emacs-scala-mode
   :mode "\\.s\\(cala\\|bt\\)$"
@@ -22,11 +32,12 @@
   :after scala-mode
   :commands sbt-start sbt-command)
 
-;; ENSIME
 (use-package ensime
   :pin "melpa-stable"
   :commands (ensime ensime-mode ensime-scala-mode-hook)
   :hook (scala-mode . ensime-mode)
+  :bind (:map ensime-mode-map
+              ("." . scala/completing-dot))
   :init
   (add-hook 'ensime-mode-hook 'scala/enable-eldoc)
   :config
