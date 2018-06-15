@@ -41,10 +41,17 @@
   :init
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode))
 
+(use-package display-line-numbers
+  :unless (version< emacs-version "26.1")
+  :init
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+
 (use-package linum
+  :if (version< emacs-version "26.1")
+  :init
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
   :config
-  (setq linum-format "%4d")
-  (add-hook 'after-init-hook 'global-linum-mode))
+  (setq linum-format "%4d"))
 
 (use-package zoom-window
   ; repo: https://github.com/syohex/emacs-zoom-window
