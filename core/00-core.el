@@ -1,4 +1,4 @@
-;;; core.el --- the core of the configuration
+;;; 00-core.el --- the core of the configuration
 
 ;; UTF-8 as the default coding system
 (when (fboundp 'set-charset-priority)
@@ -40,5 +40,7 @@
 ;; Local configurations
 (load (concat user-emacs-directory "localrc.el") 'noerror)
 
+(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold 800000)))
+
 (provide '00-core)
-;;; core.el ends here
+;;; 00-core.el ends here

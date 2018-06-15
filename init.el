@@ -4,6 +4,9 @@
 ;; URL:     https://gitlab.com/JesusMtnez/emacs.d
 ;; License: MIT
 
+;; GC threshold to 1GB
+(setq gc-cons-threshold 1000000000)
+
 (defvar version "0.1.0"
   "Current version of my configuration.")
 
@@ -55,5 +58,5 @@
 
 (el-init-load emacs-dir
   :subdirectories (list core-dir modules-dir))
-  
+
 ;;; init.el ends here
