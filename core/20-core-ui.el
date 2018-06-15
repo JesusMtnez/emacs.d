@@ -38,7 +38,7 @@
 
 (use-package rainbow-delimiters
   ; repo: https://github.com/Fanael/rainbow-delimiters
-  :config
+  :init
   (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode))
 
 (use-package linum
