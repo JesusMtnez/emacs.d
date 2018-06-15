@@ -7,6 +7,11 @@
 ;; GC threshold to 1GB
 (setq gc-cons-threshold 1000000000)
 
+(defvar defaults/file-name-handler-alist file-name-handler-alist
+  "Save default value for file-name-handler-alist")
+
+(setq file-name-handler-alist nil)
+
 (defvar version "0.1.0"
   "Current version of my configuration.")
 

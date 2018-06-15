@@ -40,7 +40,13 @@
 ;; Local configurations
 (load (concat user-emacs-directory "localrc.el") 'noerror)
 
-(add-hook 'after-init-hook (lambda () (setq gc-cons-threshold 800000)))
+(add-hook 'after-init-hook
+          (lambda ()
+            (setq gc-cons-threshold 800000)))
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq file-name-handler-alist defaults/file-name-handler-alist)))
 
 (provide '00-core)
 ;;; 00-core.el ends here
