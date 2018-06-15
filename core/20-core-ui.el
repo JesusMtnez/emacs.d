@@ -40,15 +40,15 @@
   ; repo: https://github.com/Fanael/rainbow-delimiters
   :hook (emacs-lisp-mode . rainbow-delimiters-mode))
 
-(use-package display-line-numbers
-  :unless (version< emacs-version "26.1")
-  :hook (prog-mode . display-line-numbers-mode))
+(unless (version< emacs-version "26.1")
+  (use-package display-line-numbers
+    :hook (prog-mode . display-line-numbers-mode)))
 
-(use-package linum
-  :if (version< emacs-version "26.1")
-  :hook (prog-mode . linum-mode)
-  :config
-  (setq linum-format "%4d"))
+(when (version< emacs-version "26.1")
+  (use-package linum
+    :hook (prog-mode . linum-mode)
+    :config
+    (setq linum-format "%4d")))
 
 (use-package zoom-window
   ; repo: https://github.com/syohex/emacs-zoom-window
