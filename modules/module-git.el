@@ -3,8 +3,7 @@
 (use-package git-gutter
   ; repo: https://github.com/syohex/emacs-git-gutter
   :unless (version< emacs-version "26.1")
-  :init
-  (progn (add-hook 'prog-mode-hook 'git-gutter-mode))
+  :hook prog-mode
   :config
   (setq git-gutter:hide-gutter t)
   :diminish git-gutter-mode)

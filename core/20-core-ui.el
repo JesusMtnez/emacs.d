@@ -38,18 +38,15 @@
 
 (use-package rainbow-delimiters
   ; repo: https://github.com/Fanael/rainbow-delimiters
-  :init
-  (add-hook 'emacs-lisp-mode-hook 'rainbow-delimiters-mode))
+  :hook (emacs-lisp-mode . rainbow-delimiters-mode))
 
 (use-package display-line-numbers
   :unless (version< emacs-version "26.1")
-  :init
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode))
+  :hook (prog-mode . display-line-numbers-mode))
 
 (use-package linum
   :if (version< emacs-version "26.1")
-  :init
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  :hook (prog-mode . linum-mode)
   :config
   (setq linum-format "%4d"))
 
