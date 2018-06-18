@@ -14,5 +14,9 @@
   :config
   (projectile-global-mode))
 
+(use-package helm-projectile
+  :demand
+  :config (helm-projectile-on))
+
 (provide '60-core-projects)
 ;;; 60-core-projects.el ends here
