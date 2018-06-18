@@ -15,8 +15,7 @@
         projectile-globally-ignored-files '(".DS_Store" "Icon")))
 
 (use-package helm-projectile
-  :demand
-  :config (helm-projectile-on))
+  :hook (projectile-mode . helm-projectile-on))
 
 (provide '60-core-projects)
 ;;; 60-core-projects.el ends here
