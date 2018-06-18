@@ -42,11 +42,11 @@
 
 (unless (version< emacs-version "26.1")
   (use-package display-line-numbers
-    :hook (prog-mode . display-line-numbers-mode)))
+    :hook ((prog-mode text-mode) . display-line-numbers-mode)))
 
 (when (version< emacs-version "26.1")
   (use-package linum
-    :hook (prog-mode . linum-mode)
+    :hook ((prog-mode text-mode) . linum-mode)
     :config
     (setq linum-format "%4d")))
 
