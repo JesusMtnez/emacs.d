@@ -4,7 +4,7 @@
 ;;  - `helm-projectile`: https://github.com/bbatsov/helm-projectile
 
 (use-package projectile
-  :hook (after-init-hook . projectile-mode)
+  :demand
   :config
   (setq projectile-enable-caching t
         projectile-indexing-method 'alien
@@ -13,6 +13,7 @@
         projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon")))
+  (projectile-global-mode)
 
 (use-package helm-projectile
   :hook (projectile-mode . helm-projectile-on))
