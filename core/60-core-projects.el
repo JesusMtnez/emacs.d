@@ -6,7 +6,7 @@
 (use-package projectile
   :demand
   :config
-  (setq projectile-enable-caching t
+  (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
         projectile-cache-file (concat cache-dir "projectile.cache")
         projectile-known-projects-file (concat cache-dir "projectile.projects")
