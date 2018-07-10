@@ -3,5 +3,7 @@
 #key: up
 # --
 (use-package ${1:PKG_NAME}
-  :ensure t
-  :defer t)$0
+  :diminish
+  :config
+  (progn
+    ($0)))
