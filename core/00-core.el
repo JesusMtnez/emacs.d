@@ -48,5 +48,9 @@
           (lambda ()
             (setq file-name-handler-alist defaults/file-name-handler-alist)))
 
+(use-package mwim
+  :bind (("C-a" . mwim-beginning)
+         ("C-e" . mwim-end)))
+
 (provide '00-core)
 ;;; 00-core.el ends here
