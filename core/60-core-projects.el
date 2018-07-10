@@ -13,7 +13,7 @@
         projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon")))
-  (projectile-global-mode)
+  (projectile-mode)
 
 (use-package helm-projectile
   :hook (projectile-mode . helm-projectile-on))
