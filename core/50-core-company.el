@@ -1,5 +1,4 @@
 ;;; 50-core-company.el --- company integration
-;; TODO Company integration with helm: https://github.com/yasuyk/helm-company
 
 (use-package company
   :demand
@@ -10,6 +9,11 @@
           company-minimum-prefix-length 1
           company-show-numbers t))
   :diminish (company-mode . "CM"))
+
+(use-package helm-company
+  :after (company helm)
+  :bind (:map company-active-map
+              ("C-/" . helm-company)))
 
 (provide '50-core-company)
 ;;; 50-core-company.el ends here
