@@ -19,7 +19,6 @@
   (company-complete))
 
 (use-package scala-mode
-  ; repo: https://github.com/ensime/emacs-scala-mode
   :mode "\\.s\\(cala\\|bt\\)$"
   :config
   (setq scala-indent:align-forms t
@@ -35,13 +34,12 @@
 (use-package ensime
   :pin "melpa-stable"
   :commands (ensime ensime-mode ensime-scala-mode-hook)
-  :hook (scala-mode . ensime-mode)
+  :hook ((scala-mode . ensime-mode)
+         (ensime-mode . scala/enable-eldoc)
+         (ensime-mode . eldoc-mode))
   :bind (:map ensime-mode-map
               ("." . scala/completing-dot))
-  :init
-  (add-hook 'ensime-mode-hook 'scala/enable-eldoc)
   :config
-  (add-hook 'ensime-mode-hook #'eldoc-mode)
   (setq ensime-startup-notification nil
         ensime-eldoc-hints 'all))
 
