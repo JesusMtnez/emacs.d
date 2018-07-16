@@ -8,11 +8,11 @@
   :config
   (setq markdown-indent-on-enter nil))
 
-;; TODO Configure 'markdown-toc'
-;; (use-package markdown-toc
-;;   ; repo: https://github.com/ardumont/markdown-toc
-;;   :ensure t
-;;   :defer t)
+(use-package markdown-toc
+  :hook (before-save . markdown-toc-refresh-toc)
+  :bind (:map markdown-mode-map
+              ("C-c i" . markdown-toc-generate-or-refresh-toc)
+              ("C-c r" . markdown-toc-refresh-toc)))
 
 (provide 'module-markdown)
 ;;; module-markdown.el ends here
