@@ -52,5 +52,7 @@
   :bind (("C-a" . mwim-beginning)
          ("C-e" . mwim-end)))
 
+(use-package restart-emacs)
+
 (provide '00-core)
 ;;; 00-core.el ends here
