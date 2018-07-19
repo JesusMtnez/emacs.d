@@ -56,6 +56,8 @@
   (setq zoom-window-mode-line-color "DarkRed")
   :bind (("C-x C-z" . zoom-window-zoom)))
 
+(use-package all-the-icons)
+
 ;; Smooth scrolling
 (setq redisplay-dont-pause t
       scroll-margin 5
