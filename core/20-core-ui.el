@@ -6,7 +6,11 @@
   :demand
   :init (setq doom-themes-enable-bold t
               doom-themes-enable-italic t)
-  :config (load-theme 'doom-one t))
+  :config
+  (progn
+    (load-theme 'doom-one t)
+    (doom-themes-neotree-config)
+    (setq doom-neotree-file-icons t)))
 
 ;; Other alternatives:
 ;; - atom-one-dark-theme: https://github.com/jonathanchu/atom-one-dark-theme/

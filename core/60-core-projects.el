@@ -18,5 +18,17 @@
 (use-package helm-projectile
   :hook (projectile-mode . helm-projectile-on))
 
+(use-package neotree
+  :commands neo-global--window-exists-p
+  :bind ("<f8>" . neotree-toggle)
+  :config
+  (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
+        neo-window-width 40
+        neo-create-file-auto-open t
+        neo-show-updir-line nil
+        neo-mode-line-type 'neotree
+        neo-smart-open t
+        neo-show-hidden-files t))
+
 (provide '60-core-projects)
 ;;; 60-core-projects.el ends here
