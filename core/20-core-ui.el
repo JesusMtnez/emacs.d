@@ -1,20 +1,10 @@
 ;;; 20-core-ui.el --- User Insterface core
 
-(use-package doom-themes
-  ; repo: https://github.com/hlissner/emacs-doom-themes
-  :preface (defvar region-fg nil) ; see https://github.com/hlissner/emacs-doom-themes/issues/166
+(use-package nord-theme
   :demand
-  :init (setq doom-themes-enable-bold t
-              doom-themes-enable-italic t)
   :config
   (progn
-    (load-theme 'doom-one t)
-    (doom-themes-neotree-config)
-    (setq doom-neotree-file-icons t)))
-
-;; Other alternatives:
-;; - atom-one-dark-theme: https://github.com/jonathanchu/atom-one-dark-theme/
-;; - atom-dark-theme-emacs:  https://github.com/whitlockjc/atom-dark-theme-emacs
+    (load-theme 'nord t)))
 
 (use-package dashboard
   ; repo: https://github.com/rakanalh/emacs-dashboard
