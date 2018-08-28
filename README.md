@@ -6,7 +6,9 @@
 
 # [![Emacs](http://i.imgur.com/TANBZR2.png)]() JesusMtnez's Emacs Configuration [![Emacs](http://i.imgur.com/TANBZR2.png)]()
 
-This repository contains my personal configuration for Emacs. 
+This repository contains my personal configuration for Emacs: 
+
+[![Emacs Preview](/assets/emacs-preview.png)](/assets/emacs-preview.png)
 
 ## Installation ##
 
