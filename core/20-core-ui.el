@@ -7,7 +7,6 @@
     (load-theme 'nord t)))
 
 (use-package dashboard
-  ; repo: https://github.com/rakanalh/emacs-dashboard
   :demand
   :config
   (dashboard-setup-startup-hook)
@@ -28,10 +27,8 @@
   (global-whitespace-mode t))
 
 (use-package rainbow-mode)
-; repo: https://github.com/emacsmirror/rainbow-mode
 
 (use-package rainbow-delimiters
-  ; repo: https://github.com/Fanael/rainbow-delimiters
   :hook (emacs-lisp-mode . rainbow-delimiters-mode))
 
 (unless (version< emacs-version "26.1")
@@ -45,7 +42,6 @@
     (setq linum-format "%4d")))
 
 (use-package zoom-window
-  ; repo: https://github.com/syohex/emacs-zoom-window
   :config
   (setq zoom-window-mode-line-color "DarkRed")
   :bind (("C-x C-z" . zoom-window-zoom)))

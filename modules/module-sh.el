@@ -8,12 +8,10 @@
                 sh-indentation 2))
 
 (use-package insert-shebang
-  ; repo: https://github.com/psachin/insert-shebang
   :init
   (remove-hook 'find-file-hook 'insert-shebang))
 
 (use-package company-shell
-  ; repo: https://github.com/Alexander-Miller/company-shell
   :init
   (add-to-list 'company-backends '(company-shell company-shell-env)))
 

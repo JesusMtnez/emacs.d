@@ -1,7 +1,4 @@
 ;;; 60-core-projects.el --- projects integration
-;; Repositories:
-;;  - `projectile`: https://github.com/bbatsov/projectile
-;;  - `helm-projectile`: https://github.com/bbatsov/helm-projectile
 
 (use-package projectile
   :demand

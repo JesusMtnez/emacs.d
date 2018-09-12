@@ -2,7 +2,6 @@
 
 ;; Powerline
 (use-package powerline
-  ; repo: https://github.com/milkypostman/powerline
   :demand
   :config
   (powerline-default-theme)

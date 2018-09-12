@@ -2,7 +2,6 @@
 ;; TODO Check https://github.com/Silex/docker.el
 
 (use-package dockerfile-mode
-  ; repo: https://github.com/spotify/dockerfile-mode
   :mode (("\\.dockerfile" . dockerfile-mode)
          ("Dockerfile\\'" . dockerfile-mode)))
 

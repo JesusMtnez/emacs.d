@@ -1,7 +1,4 @@
 ;;; module-git.el --- git integration
-;; Repositories:
-;;  - `git-gutter`: https://github.com/syohex/emacs-git-gutter
-;;  - `magit`: https://github.com/magit/magit
 
 (use-package git-gutter
   :unless (version< emacs-version "26.1")

@@ -2,7 +2,6 @@
 ;; TODO Integrate with https://github.com/emacs-helm/helm-ls-git
 
 (use-package helm
-  ; repo: https://github.com/emacs-helm/helm
   :bind (("C-c h" . helm-command-prefix)
          ("C-x C-f" . helm-find-files)
          ("C-x b" . helm-buffers-list)
