@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: def f(arg: T): R = { ... }
+# key: def
+# --
+def ${1:f}(${2:a}: ${3:Int}): ${4:Int} = {
+  ${0}
+}

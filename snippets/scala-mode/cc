@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Case class
+# key: cc
+# --
+case class ${1:ClassName}(${2:a}: ${3:Int})

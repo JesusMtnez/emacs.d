@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: Object main application
+# key: app
+# --
+object ${1:MainApp} extends App {
+  ${0}
+}

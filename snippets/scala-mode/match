@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: match
+# key: match
+# --
+${1: a} match {
+  case ${2: pattern} => ${0}
+}

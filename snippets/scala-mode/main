@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: def main
+# key: main
+# --
+def main(args: Array[String]) = {
+  ${0}
+}

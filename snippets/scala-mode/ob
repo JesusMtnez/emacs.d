@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: Object
+# key: ob
+# --
+object ${1:Obj} extends ${2:Class}${0}

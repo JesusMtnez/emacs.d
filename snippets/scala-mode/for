@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: For comprehension
+# key: for
+# --
+for {
+  ${1:res} <- ${2:f}${0}
+} yield ${3:res}

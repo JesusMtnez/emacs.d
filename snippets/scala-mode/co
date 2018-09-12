@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Case Object
+# key: co
+# --
+case object ${1:ObjName}
+${0}
