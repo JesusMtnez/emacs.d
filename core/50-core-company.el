@@ -3,10 +3,10 @@
 (use-package company
   :demand
   :hook (after-init . global-company-mode)
+  :bind (("M-/" . company-complete))
   :config
   (progn
-    (setq company-idle-delay 0.1
-          company-minimum-prefix-length 1
+    (setq company-idle-delay nil
           company-show-numbers t))
   :diminish (company-mode . "CM"))
 

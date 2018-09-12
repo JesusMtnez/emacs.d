@@ -11,6 +11,7 @@
 (setq-default buffer-file-coding-system 'utf-8)
 
 (global-unset-key (kbd "C-z"))
+(global-unset-key (kbd "M-/"))
 
 ;; Personal settings
 (setq-default c-basic-offset 4
