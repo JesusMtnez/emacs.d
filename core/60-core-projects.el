@@ -5,6 +5,7 @@
 
 (use-package projectile
   :demand
+  :bind-keymap ("C-c p" . projectile-command-map)
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
