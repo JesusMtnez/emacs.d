@@ -10,8 +10,8 @@
   :demand
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((projects  . 5)
-                        (recents . 5))
+  (setq dashboard-items '((projects . 10)
+                          (recents . 10))
         dashboard-startup-banner 'logo
         dashboard-banner-logo-title "The One True Editor, Emacs"))
 
