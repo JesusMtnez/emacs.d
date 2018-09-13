@@ -4,8 +4,11 @@
   ; Built-in mode for sh
   :mode (("\\.zsh$" . sh-mode)
          ("/zshrc$" . sh-mode))
-  :config (setq sh-basic-offset 2
-                sh-indentation 2))
+  :bind (:map sh-mode-map
+              ("C-c s" . insert-shebang))
+  :config (progn
+            (setq sh-basic-offset 2
+                  sh-indentation 2)))
 
 (use-package insert-shebang
   :init (remove-hook 'find-file-hook 'insert-shebang)
