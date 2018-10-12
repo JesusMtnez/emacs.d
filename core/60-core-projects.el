@@ -11,14 +11,24 @@
         projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
         projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
         projectile-globally-ignored-files '(".DS_Store" "Icon")))
-  (projectile-mode)
 
 (use-package helm-projectile
   :hook (projectile-mode . helm-projectile-on))
 
+(defun neotree-project-dir ()
+  "Open NeoTree using the git root."
+  (interactive)
+  (let ((project-dir (projectile-project-root))
+        (file-name (buffer-file-name)))
+    (neotree-toggle)
+    (if project-dir
+        (if (neo-global--window-exists-p)
+            (progn
+              (neotree-dir project-dir)
+              (neotree-find file-name))))))
+
 (use-package neotree
-  :commands neo-global--window-exists-p
-  :bind ("<f8>" . neotree-toggle)
+  :bind ("<f8>" . 'neotree-project-dir)
   :config
   (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
         neo-window-width 40
@@ -26,6 +36,8 @@
         neo-show-updir-line nil
         neo-mode-line-type 'neotree
         neo-smart-open t
+        neo-autorefresh t
+        neo-auto-indent-point t
         neo-show-hidden-files t))
 
 (provide '60-core-projects)
