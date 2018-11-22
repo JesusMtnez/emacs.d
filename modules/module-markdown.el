@@ -8,6 +8,12 @@
   :config
   (setq markdown-indent-on-enter nil))
 
+(use-package flymd
+  :config
+  (setq flymd-output-directory (concat cache-dir "flymd")
+        flymd-browser-open-function (lambda (url) (let((browse-url-browser-function 'browse-url-firefox))
+                                                    (browse-url url)))))
+
 (use-package markdown-toc
   :hook (before-save . markdown-toc-refresh-toc)
   :bind (:map markdown-mode-map
