@@ -4,6 +4,8 @@
   :demand
   :config
   (progn
+    (setq nord-comment-brightness 15
+          nord-uniform-mode-lines t)
     (load-theme 'nord t)))
 
 (use-package dashboard
