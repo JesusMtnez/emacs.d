@@ -7,7 +7,9 @@
   :config
   (progn
     (setq company-idle-delay nil
-          company-show-numbers t))
+          company-show-numbers t
+          company-dabbrev-downcase nil
+          company-dabbrev-ignore-case t))
   :diminish (company-mode . "CM"))
 
 (use-package helm-company
