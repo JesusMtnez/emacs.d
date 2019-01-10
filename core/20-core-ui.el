@@ -12,7 +12,15 @@
   :demand
   :config
   (dashboard-setup-startup-hook)
-  (setq dashboard-items '((projects . 10)
+  
+  (defun dashboard-load-packages (list-size)
+    (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
+            (format "[%d packages loaded in %s]" (length package-activated-list) (emacs-init-time))))
+
+  (add-to-list 'dashboard-item-generators '(packages . dashboard-load-packages))
+
+  (setq dashboard-items '((packages)
+                          (projects . 10)
                           (recents . 10))
         dashboard-startup-banner 'logo
         dashboard-banner-logo-title "The One True Editor, Emacs"))
