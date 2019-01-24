@@ -29,19 +29,21 @@
 
 (use-package sbt-mode
   :after scala-mode
-  :commands sbt-start sbt-command)
-
-(use-package ensime
-  :pin "melpa-stable"
-  :commands (ensime ensime-mode ensime-scala-mode-hook)
-  :hook ((scala-mode . ensime-mode)
-         (ensime-mode . scala/enable-eldoc)
-         (ensime-mode . eldoc-mode))
-  :bind (:map ensime-mode-map
-              ("." . scala/completing-dot))
+  :commands sbt-start sbt-command
   :config
-  (setq ensime-startup-notification nil
-        ensime-eldoc-hints 'all))
+  ;; WORKAROUND: https://github.com/ensime/emacs-sbt-mode/issues/31
+  ;; allows using SPACE when in the minibuffer
+  (substitute-key-definition
+   'minibuffer-complete-word
+   'self-insert-command
+   minibuffer-local-completion-map))
+
+(use-package lsp-scala
+  :if (file-directory-p (concat local-dir "lsp-scala"))
+  :after scala-mode
+  :demand t
+  :load-path (lambda() (concat local-dir "lsp-scala"))
+  :hook (scala-mode . lsp))
 
 (provide 'module-scala)
 ;;; module-scala.el ends here

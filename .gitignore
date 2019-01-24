@@ -18,7 +18,7 @@ tramp
 **.projects
 **.cache
 custom.el
-local/cache/**
+local/**
 
 # Custom
 .backup
