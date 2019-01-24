@@ -55,7 +55,5 @@
 
 (use-package restart-emacs)
 
-(setq exec-path (append exec-path '("$HOME/bin")))
-
 (provide '00-core)
 ;;; 00-core.el ends here

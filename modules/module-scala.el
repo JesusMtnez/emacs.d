@@ -43,7 +43,9 @@
   :after scala-mode
   :demand t
   :load-path (lambda() (concat local-dir "lsp-scala"))
-  :hook (scala-mode . lsp))
+  :hook (scala-mode . lsp)
+  :init
+  (setq lsp-scala-server-command "~/.local/bin/metals-emacs"))
 
 (provide 'module-scala)
 ;;; module-scala.el ends here
