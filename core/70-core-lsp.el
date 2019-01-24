@@ -1,6 +1,8 @@
 ;;; 70-core-lsp.el --- lsp support
 
-(use-package lsp-mode)
+(use-package lsp-mode
+  :config
+  (setq lsp-session-file (concat cache-dir ".lsp-session-v1")))
 
 ;; (use-package eglot
 ;;   :config
