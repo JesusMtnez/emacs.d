@@ -1,12 +1,11 @@
 ;;; 30-core-modeline.el --- Modeline configuration
 
-;; Powerline
-(use-package powerline
-  :demand
+(use-package doom-modeline
+  :hook (after-init . doom-modeline-mode)
   :config
-  (powerline-default-theme)
-  (setq ns-use-srgb-colorspace t)
-  (add-hook 'after-init-hook 'powerline-reset))
+  (setq doom-modeline-buffer-file-name-style 'relative-to-project
+        doom-modeline-height 20
+        doom-modeline-major-mode-color-icon t))
 
 (provide '30-core-modeline)
 ;;; 30-core-modeline.el ends here
