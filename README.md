@@ -8,7 +8,7 @@
 
 This repository contains my personal configuration for Emacs: 
 
-[![Emacs Preview](/assets/emacs-preview.png)](/assets/emacs-preview.png)
+[![Emacs Preview](/assets/emacs-preview.png)](/assets/2019-01-25.png)
 
 ## Installation ##
 
