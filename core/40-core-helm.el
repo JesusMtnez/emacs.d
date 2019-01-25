@@ -2,11 +2,11 @@
 ;; TODO Integrate with https://github.com/emacs-helm/helm-ls-git
 
 (use-package helm
-  :bind (("C-c h" . helm-command-prefix)
+  :bind (("C-c h"   . helm-command-prefix)
          ("C-x C-f" . helm-find-files)
-         ("C-x b" . helm-buffers-list)
-         ("M-x" . helm-M-x)
-         ("M-y" . helm-show-kill-ring))
+         ("C-x b"   . helm-buffers-list)
+         ("M-x"     . helm-M-x)
+         ("M-y"     . helm-show-kill-ring))
   :config (progn (require 'helm-config)
                  (setq helm-split-window-in-side-p t
                        helm-move-to-line-cycle-in-source t ; Circle when using helm-next/previous-line
