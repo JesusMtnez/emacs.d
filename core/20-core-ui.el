@@ -15,7 +15,7 @@
   :demand
   :config
   (dashboard-setup-startup-hook)
-  
+
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
             (format "[%d packages loaded in %s]" (length package-activated-list) (emacs-init-time))))
@@ -74,7 +74,7 @@
               ("M-6" . 'winum-select-window-6)
               ("M-7" . 'winum-select-window-7)
               ("M-8" . 'winum-select-window-8)
-              ("M-9" . 'winum-select-window-9))              
+              ("M-9" . 'winum-select-window-9))
   :config
   (progn
     (defun winum-assign-0-to-neotree ()
