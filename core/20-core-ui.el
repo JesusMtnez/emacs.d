@@ -1,12 +1,15 @@
 ;;; 20-core-ui.el --- User Insterface core
 
-(use-package nord-theme
-  :demand
+(use-package doom-themes
+  :demand t
   :config
   (progn
-    (setq nord-comment-brightness 15
-          nord-uniform-mode-lines t)
-    (load-theme 'nord t)))
+    (setq doom-themes-enable-bold t
+          doom-themes-enable-italic t
+          doom-neotree-files-icons t)
+    (load-theme 'doom-one t)
+    (doom-themes-neotree-config)
+    (doom-themes-org-config)))
 
 (use-package dashboard
   :demand
