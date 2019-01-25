@@ -16,6 +16,8 @@
                        helm-autoresize-mode t;
                        helm-autoresize-max-height 20
                        helm-mode-fuzzy-match t
+                       helm-buffers-fuzzy-matching t
+                       helm-recentf-fuzzy-match t
                        helm-completion-in-region-fuzzy-match t
                        helm-M-x-fuzzy-match t)
                  (helm-mode t)
