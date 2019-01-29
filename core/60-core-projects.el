@@ -38,7 +38,8 @@
         neo-smart-open t
         neo-autorefresh t
         neo-auto-indent-point t
-        neo-show-hidden-files t))
+        neo-show-hidden-files t
+        neo-window-fixed-size nil))
 
 (provide '60-core-projects)
 ;;; 60-core-projects.el ends here
