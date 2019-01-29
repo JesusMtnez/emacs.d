@@ -15,20 +15,9 @@
 (use-package helm-projectile
   :hook (projectile-mode . helm-projectile-on))
 
-(defun neotree-project-dir ()
-  "Open NeoTree using the git root."
-  (interactive)
-  (let ((project-dir (projectile-project-root))
-        (file-name (buffer-file-name)))
-    (neotree-toggle)
-    (if project-dir
-        (if (neo-global--window-exists-p)
-            (progn
-              (neotree-dir project-dir)
-              (neotree-find file-name))))))
-
 (use-package neotree
-  :functions neotree-resize-window
+  :functions (neotree-resize-window neotree-project-dir)
+  :commands neotree-project-dir
   :hook ((neo-enter . neotree-resize-window))
   :bind ("<f8>" . 'neotree-project-dir)
   :config
@@ -41,10 +30,17 @@
         (fit-window-to-buffer)
         (neo-buffer--lock-width))))
 
+  (defun neotree-project-dir ()
+    "Open NeoTree using the git root."
     (interactive)
-    (neo-buffer--with-resizable-window
-     (let ((fit-window-to-buffer-horizontally t))
-       (fit-window-to-buffer))))
+    (let ((project-dir (projectile-project-root))
+          (file-name (buffer-file-name)))
+      (neotree-toggle)
+      (if project-dir
+          (if (neo-global--window-exists-p)
+              (progn
+                (neotree-dir project-dir)
+                (neotree-find file-name))))))
 
   (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
         neo-window-width 40
