@@ -31,7 +31,7 @@
   :bind ("<f8>" . 'neotree-project-dir)
   :config
   (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
-        neo-window-width 40
+        neo-window-width 70
         neo-create-file-auto-open t
         neo-show-updir-line nil
         neo-mode-line-type 'neotree
