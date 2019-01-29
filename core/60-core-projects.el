@@ -28,10 +28,20 @@
               (neotree-find file-name))))))
 
 (use-package neotree
+  :functions neotree-resize-window
+  :hook ((neo-change-root . neotree-resize-window)
+         (neo-enter . neotree-resize-window))
   :bind ("<f8>" . 'neotree-project-dir)
   :config
+  (defun neotree-resize-window (&rest _args)
+    "Resize neotree window."
+    (interactive)
+    (neo-buffer--with-resizable-window
+     (let ((fit-window-to-buffer-horizontally t))
+       (fit-window-to-buffer))))
+
   (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
-        neo-window-width 70
+        neo-window-width 40
         neo-create-file-auto-open t
         neo-show-updir-line nil
         neo-mode-line-type 'neotree

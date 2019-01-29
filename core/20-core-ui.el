@@ -5,10 +5,8 @@
   :config
   (progn
     (setq doom-themes-enable-bold t
-          doom-themes-enable-italic t
-          doom-neotree-files-icons t)
+          doom-themes-enable-italic t)
     (load-theme 'doom-one t)
-    (doom-themes-neotree-config)
     (doom-themes-org-config)))
 
 (use-package dashboard
