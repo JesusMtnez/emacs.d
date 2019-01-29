@@ -29,12 +29,18 @@
 
 (use-package neotree
   :functions neotree-resize-window
-  :hook ((neo-change-root . neotree-resize-window)
-         (neo-enter . neotree-resize-window))
+  :hook ((neo-enter . neotree-resize-window))
   :bind ("<f8>" . 'neotree-project-dir)
   :config
+
   (defun neotree-resize-window (&rest _args)
     "Resize neotree window."
+    (neo-global--when-window
+      (let ((fit-window-to-buffer-horizontally t))
+        (neo-buffer--unlock-width)
+        (fit-window-to-buffer)
+        (neo-buffer--lock-width))))
+
     (interactive)
     (neo-buffer--with-resizable-window
      (let ((fit-window-to-buffer-horizontally t))
