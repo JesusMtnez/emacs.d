@@ -39,10 +39,8 @@
    minibuffer-local-completion-map))
 
 (use-package lsp-scala
-  :if (file-directory-p (concat local-dir "lsp-scala"))
   :after scala-mode
   :demand t
-  :load-path (lambda() (concat local-dir "lsp-scala"))
   :hook (scala-mode . lsp)
   :init
   (setq lsp-scala-server-command "~/.local/bin/metals-emacs"))
