@@ -53,6 +53,9 @@
   :bind (("C-a" . mwim-beginning)
          ("C-e" . mwim-end)))
 
+(use-package which-key
+  :hook (after-init . which-key-mode))
+
 (use-package restart-emacs)
 
 (provide '00-core)
