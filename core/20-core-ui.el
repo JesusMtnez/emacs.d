@@ -40,7 +40,7 @@
 (use-package rainbow-mode)
 
 (use-package rainbow-delimiters
-  :hook (emacs-lisp-mode . rainbow-delimiters-mode))
+  :hook (prog-mode . rainbow-delimiters-mode))
 
 (unless (version< emacs-version "26.1")
   (use-package display-line-numbers
