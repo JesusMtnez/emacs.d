@@ -52,10 +52,6 @@ The configuration is organized like:
 - `modules`: emacs extensions for my daily use.
 - `local`: specific files for each  emacs installation.
 
-## Changelog
-
-All notable changes to this project will be documented in [CHANGELOG.md](/CHANGELOG.md).
-
 ## Copyright
 
 Copyright (c) 2017-2018 JesusMtnez. See [LICENSE](/LICENSE) for details.
