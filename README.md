@@ -54,4 +54,4 @@ The configuration is organized like:
 
 ## Copyright
 
-Copyright (c) 2017-2018 JesusMtnez. See [LICENSE](/LICENSE) for details.
+Copyright (c) 2017-2019 JesusMtnez. See [LICENSE](/LICENSE) for details.
