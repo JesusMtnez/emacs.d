@@ -12,7 +12,6 @@
 (use-package dashboard
   :demand
   :config
-  (dashboard-setup-startup-hook)
 
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
@@ -24,7 +23,8 @@
                           (projects . 10)
                           (recents . 10))
         dashboard-startup-banner 'logo
-        dashboard-banner-logo-title "The One True Editor, Emacs"))
+        dashboard-banner-logo-title "The One True Editor, Emacs")
+  (dashboard-setup-startup-hook))
 
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 (if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
