@@ -6,6 +6,7 @@
   :config
   (setq projectile-enable-caching nil
         projectile-indexing-method 'alien
+        projectile-completion-system 'helm
         projectile-cache-file (concat cache-dir "projectile.cache")
         projectile-known-projects-file (concat cache-dir "projectile.projects")
         projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
@@ -13,6 +14,8 @@
         projectile-globally-ignored-files '(".DS_Store" "Icon")))
 
 (use-package helm-projectile
+  :demand
+  :init (setq helm-projectile-fuzzy-match t)
   :hook (projectile-mode . helm-projectile-on))
 
 (use-package neotree
