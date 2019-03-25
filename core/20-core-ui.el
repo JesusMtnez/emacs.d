@@ -11,8 +11,8 @@
 
 (use-package dashboard
   :demand
+  :if (< (length command-line-args) 2)
   :config
-
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
             (format "[%d packages loaded in %s]" (length package-activated-list) (emacs-init-time))))
