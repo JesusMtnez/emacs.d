@@ -20,5 +20,14 @@
 (use-package helm-lsp
   :after helm lsp-mode)
 
+(use-package company-lsp
+  :after company-mode
+  :demand t
+  :config
+  (setq company-lsp-cache-candidates nil
+        company-lsp-async t
+        company-lsp-enable-recompletion t)
+  (push 'company-lsp company-backends))
+
 (provide '70-core-lsp)
 ;;; 70-core-lsp.el ends here
