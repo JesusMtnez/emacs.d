@@ -21,7 +21,6 @@
 
 (use-package company-lsp
   :after company-mode
-  :demand t
   :config
   (setq company-lsp-cache-candidates nil
         company-lsp-async t
