@@ -1,7 +1,6 @@
 ;;; 70-core-lsp.el --- lsp support
 
 (use-package lsp-ui
-  :hook (lsp-mode . lsp-ui-mode)
   :config
   (setq lsp-ui-doc-enable t
         lsp-ui-doc-include-signture t
@@ -26,8 +25,7 @@
   :config
   (setq company-lsp-cache-candidates nil
         company-lsp-async t
-        company-lsp-enable-recompletion t)
-  (push 'company-lsp company-backends))
+        company-lsp-enable-recompletion t))
 
 (provide '70-core-lsp)
 ;;; 70-core-lsp.el ends here
