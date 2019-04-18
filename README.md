@@ -1,6 +1,6 @@
 [comment]: # (Start Badges)
 
-[![GNU Emacs](https://img.shields.io/badge/GNU%20Emacs-25.3%20%2F%2026.1-blue.svg)](https://www.gnu.org/software/emacs/) [![GitHub](https://img.shields.io/github/license/JesusMtnez/emacs.d.svg)](/LICENSE) [![Gitlab pipeline status (branch)](https://img.shields.io/gitlab/pipeline/JesusMtnez/emacs.d/master.svg)](https://gitlab.com/JesusMtnez/emacs.d/pipelines)
+[![GNU Emacs](https://img.shields.io/badge/GNU%20Emacs-25.3%20%2F%2026.2-blue.svg)](https://www.gnu.org/software/emacs/) [![GitHub](https://img.shields.io/github/license/JesusMtnez/emacs.d.svg)](/LICENSE) [![Gitlab pipeline status (branch)](https://img.shields.io/gitlab/pipeline/JesusMtnez/emacs.d/master.svg)](https://gitlab.com/JesusMtnez/emacs.d/pipelines)
 
 [comment]: # (End Badges)
 

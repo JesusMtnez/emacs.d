@@ -17,6 +17,6 @@ build:25.3:
 
 build:26.1:
   variables:
-    EMACS_VERSION: "26.1"
+    EMACS_VERSION: "26.2"
   <<: *build_def
 
