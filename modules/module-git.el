@@ -9,8 +9,11 @@
   (git-gutter:update-interval 0.1)
   (git-gutter:verbosity 0))
 
+(use-package git-commit
+  :hook (after-init . global-git-commit-mode))
+
 (use-package magit
-  :init (progn (global-git-commit-mode t)))
+  :bind ("C-x g" . magit-status))
 
 (provide 'module-git)
 ;;; module-git.el ends here
