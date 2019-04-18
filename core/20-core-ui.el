@@ -32,6 +32,7 @@
 
 (use-package menu-bar
   :ensure nil
+  :bind ("C-x C-k" . kill-this-buffer)
   :config (menu-bar-mode -1))
 
 (use-package tool-bar

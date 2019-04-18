@@ -7,8 +7,16 @@
 ;; GC threshold to 1GB
 (setq gc-cons-threshold 1000000000)
 
+(add-hook 'after-init-hook
+          (lambda ()
+            (setq gc-cons-threshold 800000)))
+
 (defvar defaults/file-name-handler-alist file-name-handler-alist
   "Save default value for file-name-handler-alist")
+
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            (setq file-name-handler-alist defaults/file-name-handler-alist)))
 
 (setq file-name-handler-alist nil)
 
