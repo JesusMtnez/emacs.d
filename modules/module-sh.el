@@ -1,14 +1,13 @@
 ;;; module-sh.el --- sh integration
 
 (use-package sh-script
-  ; Built-in mode for sh
   :mode (("\\.zsh$" . sh-mode)
          ("/zshrc$" . sh-mode))
   :bind (:map sh-mode-map
               ("C-c s" . insert-shebang))
-  :config (progn
-            (setq sh-basic-offset 2
-                  sh-indentation 2)))
+  :custom
+  (sh-basic-offset 2)
+  (sh-indentation 2))
 
 (use-package insert-shebang
   :init (remove-hook 'find-file-hook 'insert-shebang)
@@ -19,8 +18,10 @@
                   ("zsh" . "zsh"))))
 
 (use-package company-shell
+  :after (company sh-script)
   :init
-  (add-to-list 'company-backends '(company-shell company-shell-env)))
+  (push 'company-shell company-backends)
+  (push 'company-shell-env company-backends))
 
 (provide 'module-sh)
 ;;; module-sh.el ends here

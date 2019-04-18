@@ -2,21 +2,21 @@
 
 (use-package web-mode
   :mode ("\\.html?\\'" "\\.css?\\'")
-  :config
-  (progn
-    (setq web-mode-code-indent-offset 2
-          web-mode-css-indent-offset 2
-          web-mode-markup-indent-offset 2
-          web-mode-script-padding 2
-          web-mode-enable-auto-pairing t
-          web-mode-enable-current-element-highlight t
-          web-mode-enable-current-column-highlight t)
-    (set-face-attribute 'web-mode-html-tag-bracket-face nil :foreground "Snow3")
-    (set-face-attribute 'web-mode-current-element-highlight-face nil :background "#073642")
+  :custom
+  (web-mode-code-indent-offset 2)
+  (web-mode-css-indent-offset 2)
+  (web-mode-markup-indent-offset 2)
+  (web-mode-script-padding 2)
+  (web-mode-enable-auto-pairing t)
+  (web-mode-enable-current-element-highlight t)
+  (web-mode-enable-current-column-highlight t)
+  :custom-face
+  (web-mode-html-tag-bracket-face ((nil (:foreground "Snow3"))))
+  (web-mode-current-element-highlight-face ((nil (:background "#073642")))))
 
-    (use-package emmet-mode
-      :config
-      (add-hook 'web-mode-hook 'emmet-mode))))
+(use-package emmet-mode
+  :after (web-mode)
+  :hook (web-mode . emmet-mode))
 
 (provide 'module-web)
 ;;; module-web.el ends here

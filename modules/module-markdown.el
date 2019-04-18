@@ -2,12 +2,12 @@
 
 (use-package markdown-mode
   :mode (("\\.m[ark]*d[own]*" . gfm-mode))
-  :config
-  (setq markdown-indent-on-enter nil))
+  :custom
+  (markdown-indent-on-enter nil))
 
 (use-package flymd
-  :config
-  (setq flymd-output-directory (concat cache-dir "flymd")
+  :custom
+  (flymd-output-directory (concat cache-dir "flymd")
         flymd-browser-open-function (lambda (url) (let((browse-url-browser-function 'browse-url-firefox))
                                                     (browse-url url)))))
 
