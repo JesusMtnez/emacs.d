@@ -30,6 +30,10 @@
 (setq-default cursor-type 'bar)
 (put 'downcase-region 'disabled nil)
 
+(use-package simple
+  :ensure nil
+  :hook (before-save . delete-trailing-whitespace))
+
 ;; scratch
 (setq
  initial-scratch-message nil ; Empty scratch buffer
