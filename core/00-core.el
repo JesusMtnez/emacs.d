@@ -32,6 +32,12 @@
   (delete-selection-mode t)
   (global-auto-revert-mode t)
   (custom-file nil "Do not store customizations")
+  ; Smooth scrolling
+  (redisplay-dont-pause t)
+  (scroll-margin 5)
+  (scroll-step 1)
+  (scroll-conservatively 10000)
+  (scroll-preserve-screen-position t)
   :config
   (put 'downcase-region 'disabled nil)
   (fset 'yes-or-no-p 'y-or-n-p)

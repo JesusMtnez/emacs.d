@@ -75,21 +75,13 @@
   (push " *NeoTree*" aw-ignored-buffers)
   (push "*which-key*" aw-ignored-buffers))
 
-;; Smooth scrolling
-(use-package emacs
+(use-package faces
   :ensure nil
-  :custom
-  (redisplay-dont-pause t)
-  (scroll-margin 5)
-  (scroll-step 1)
-  (scroll-conservatively 10000)
-  (scroll-preserve-screen-position t))
-
-;; Font configuration
-(when (member "Hack" (font-family-list))
-  (set-face-attribute 'default nil :font "Hack 9"))
-(when (member "FontAwesome" (font-family-list))
-  (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))
+  :config
+  (when (member "Hack" (font-family-list))
+    (set-face-attribute 'default nil :font "Hack 9"))
+  (when (member "FontAwesome" (font-family-list))
+    (set-fontset-font t 'unicode "FontAwesome" nil 'prepend)))
 
 (provide '20-core-ui)
 ;;; 20-core-ui.el ends here
