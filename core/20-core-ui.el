@@ -61,6 +61,8 @@
 
 (use-package ace-window
   :bind (("M-o" . ace-window))
+  :custom
+  (aw-dispatch-always t "Issue read-char even for one window")
   :config
   (push " *NeoTree*" 'aw-ignored-buffers )
   (push "*which-key*" 'aw-ignored-buffers))
