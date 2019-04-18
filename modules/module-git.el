@@ -12,6 +12,10 @@
 (use-package git-commit
   :hook (after-init . global-git-commit-mode))
 
+(use-package gitconfig-mode)
+
+(use-package gitignore-mode)
+
 (use-package magit
   :bind ("C-x g" . magit-status))
 
