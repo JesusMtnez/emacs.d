@@ -39,11 +39,10 @@
   :config (tool-bar-mode -1))
 
 (use-package whitespace
-  :demand
   :diminish global-whitespace-mode
-  :init
-  (setq whitespace-style '(face tabs trailing))
-  (global-whitespace-mode t))
+  :hook (after-init . global-whitespace-mode)
+  :custom
+  (whitespace-style '(face tabs trailing)))
 
 (use-package rainbow-mode)
 
