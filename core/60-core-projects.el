@@ -1,7 +1,7 @@
 ;;; 60-core-projects.el --- projects integration
 
 (use-package projectile
-  :demand
+  :hook (after-init . projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
   :custom
   (projectile-enable-caching nil)
