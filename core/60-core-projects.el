@@ -3,19 +3,20 @@
 (use-package projectile
   :demand
   :bind-keymap ("C-c p" . projectile-command-map)
-  :config
-  (setq projectile-enable-caching nil
-        projectile-indexing-method 'alien
-        projectile-completion-system 'helm
-        projectile-cache-file (concat cache-dir "projectile.cache")
-        projectile-known-projects-file (concat cache-dir "projectile.projects")
-        projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml")
-        projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class")
-        projectile-globally-ignored-files '(".DS_Store" "Icon")))
+  :custom
+  (projectile-enable-caching nil)
+  (projectile-indexing-method 'alien)
+  (projectile-completion-system 'helm)
+  (projectile-cache-file (concat cache-dir "projectile.cache"))
+  (projectile-known-projects-file (concat cache-dir "projectile.projects"))
+  (projectile-project-root-files '(".git" ".project" "setup.py" "build.sbt" "pom.xml"))
+  (projectile-globally-ignored-file-suffixes '(".elc" ".pyc" ".o" ".class"))
+  (projectile-globally-ignored-files '(".DS_Store" "Icon")))
 
 (use-package helm-projectile
   :demand
-  :init (setq helm-projectile-fuzzy-match t)
+  :custom
+  (helm-projectile-fuzzy-match t)
   :hook (projectile-mode . helm-projectile-on))
 
 (use-package neotree
@@ -44,17 +45,17 @@
               (progn
                 (neotree-dir project-dir)
                 (neotree-find file-name))))))
-
-  (setq neo-theme (if (display-graphic-p) 'icons 'nerd)
-        neo-window-width 40
-        neo-create-file-auto-open t
-        neo-show-updir-line nil
-        neo-mode-line-type 'neotree
-        neo-smart-open t
-        neo-autorefresh t
-        neo-auto-indent-point t
-        neo-show-hidden-files t
-        neo-window-fixed-size nil))
+  :custom
+  (neo-theme (if (display-graphic-p) 'icons 'nerd))
+  (neo-window-width 40)
+  (neo-create-file-auto-open t)
+  (neo-show-updir-line nil)
+  (neo-mode-line-type 'neotree)
+  (neo-smart-open t)
+  (neo-autorefresh t)
+  (neo-auto-indent-point t)
+  (neo-show-hidden-files t)
+  (neo-window-fixed-size nil))
 
 (provide '60-core-projects)
 ;;; 60-core-projects.el ends here

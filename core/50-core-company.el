@@ -1,16 +1,14 @@
 ;;; 50-core-company.el --- company integration
 
 (use-package company
-  :demand
+  :diminish (company-mode . "CM")
   :hook (after-init . global-company-mode)
   :bind (("M-/" . company-complete))
-  :config
-  (progn
-    (setq company-idle-delay nil
-          company-show-numbers t
-          company-dabbrev-downcase nil
-          company-dabbrev-ignore-case t))
-  :diminish (company-mode . "CM"))
+  :custom
+  (company-idle-delay nil)
+  (company-show-numbers t)
+  (company-dabbrev-downcase nil)
+  (company-dabbrev-ignore-case t))
 
 (use-package helm-company
   :after (company helm)

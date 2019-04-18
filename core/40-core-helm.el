@@ -6,24 +6,27 @@
          ("C-x C-f" . helm-find-files)
          ("C-x b"   . helm-buffers-list)
          ("M-x"     . helm-M-x)
-         ("M-y"     . helm-show-kill-ring))
-  :config (progn (require 'helm-config)
-                 (setq helm-split-window-in-side-p t
-                       helm-move-to-line-cycle-in-source t ; Circle when using helm-next/previous-line
-                       helm-ff-search-library-in-sexp t
-                       helm-scroll-amount 8
-                       helm-ff-file-name-history-use-recentf t
-                       helm-autoresize-mode t;
-                       helm-autoresize-max-height 20
-                       helm-mode-fuzzy-match t
-                       helm-buffers-fuzzy-matching t
-                       helm-recentf-fuzzy-match t
-                       helm-completion-in-region-fuzzy-match t
-                       helm-M-x-fuzzy-match t)
-                 (helm-mode t)
-                 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
-                 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB works in terminal
-                 (define-key helm-map (kbd "C-z") 'helm-select-action)) ; list actions using C-z
+         ("M-y"     . helm-show-kill-ring)
+         :map helm-map
+         ("TAB" . helm-execute-persistent-action)
+         ("C-i" . helm-execute-persistent-action)
+         ("C-z" . helm-select-action))
+  :custom
+  (helm-split-window-in-side-p t)
+  (helm-move-to-line-cycle-in-source t)
+  (helm-ff-search-library-in-sexp t)
+  (helm-scroll-amount 8)
+  (helm-ff-file-name-history-use-recentf t)
+  (helm-autoresize-mode t)
+  (helm-autoresize-max-height 20)
+  (helm-mode-fuzzy-match t)
+  (helm-buffers-fuzzy-matching t)
+  (helm-recentf-fuzzy-match t)
+  (helm-completion-in-region-fuzzy-match t)
+  (helm-M-x-fuzzy-match t)
+  :config
+  (require 'helm-config)
+  (helm-mode t)
   :diminish helm-mode)
 
 (use-package swiper-helm
