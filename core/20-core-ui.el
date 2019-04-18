@@ -90,8 +90,8 @@
       scroll-preserve-screen-position 1)
 
 ;; Font configuration
-(set-face-attribute 'default nil :font "Hack")
-(set-frame-font "Hack 9" nil t)
+(when (member "Hack" (font-family-list))
+  (set-face-attribute 'default nil :font "Hack 9"))
 (when (member "FontAwesome" (font-family-list))
   (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))
 
