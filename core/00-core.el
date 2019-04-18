@@ -31,11 +31,10 @@
   (electric-pair-mode t)
   (delete-selection-mode t)
   (global-auto-revert-mode t)
-  (custom-file (concat user-emacs-directory "custom.el"))
+  (custom-file nil "Do not store customizations")
   :config
   (put 'downcase-region 'disabled nil)
   (fset 'yes-or-no-p 'y-or-n-p)
-  (load custom-file 'no-error)
   (load (concat user-emacs-directory "localrc.el") 'noerror))
 
 (use-package simple
