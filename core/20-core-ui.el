@@ -2,12 +2,12 @@
 
 (use-package doom-themes
   :demand t
+  :custom
+  (doom-themes-enable-bold t)
+  (doom-themes-enable-italic t)
   :config
-  (progn
-    (setq doom-themes-enable-bold t
-          doom-themes-enable-italic t)
-    (load-theme 'doom-one t)
-    (doom-themes-org-config)))
+  (load-theme 'doom-one t)
+  (doom-themes-org-config))
 
 (use-package dashboard
   :demand
@@ -26,9 +26,17 @@
         dashboard-banner-logo-title "The One True Editor, Emacs")
   (dashboard-setup-startup-hook))
 
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-(if (fboundp 'menu-bar-mode)   (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode)   (tool-bar-mode -1))
+(use-package scroll-bar
+  :ensure nil
+  :config (scroll-bar-mode -1))
+
+(use-package menu-bar
+  :ensure nil
+  :config (menu-bar-mode -1))
+
+(use-package tool-bar
+  :ensure nil
+  :config (tool-bar-mode -1))
 
 (use-package whitespace
   :demand
@@ -49,13 +57,13 @@
 (when (version< emacs-version "26.1")
   (use-package linum
     :hook ((prog-mode text-mode) . linum-mode)
-    :config
-    (setq linum-format "%4d")))
+    :custom
+    (linum-format "%4d")))
 
 (use-package zoom-window
-  :config
-  (setq zoom-window-mode-line-color "DarkRed")
-  :bind (("C-x C-z" . zoom-window-zoom)))
+  :bind (("C-x C-z" . zoom-window-zoom))
+  :custom
+  (zoom-window-mode-line-color "DarkRed" "Modeline color when enabled"))
 
 (use-package all-the-icons)
 
@@ -68,11 +76,14 @@
   (push "*which-key*" 'aw-ignored-buffers))
 
 ;; Smooth scrolling
-(setq redisplay-dont-pause t
-      scroll-margin 5
-      scroll-step 1
-      scroll-conservatively 10000
-      scroll-preserve-screen-position 1)
+(use-package emacs
+  :ensure nil
+  :custom
+  (redisplay-dont-pause t)
+  (scroll-margin 5)
+  (scroll-step 1)
+  (scroll-conservatively 10000)
+  (scroll-preserve-screen-position t))
 
 ;; Font configuration
 (when (member "Hack" (font-family-list))
