@@ -30,6 +30,11 @@
 (setq-default cursor-type 'bar)
 (put 'downcase-region 'disabled nil)
 
+;; scratch
+(setq
+ initial-scratch-message nil ; Empty scratch buffer
+ initial-major-mode 'org-mode)
+
 ;; Key bindings
 (global-set-key (kbd "C-c C-c") 'comment-or-uncomment-region-or-line)
 (global-set-key (kbd "C-x C-k") 'kill-this-buffer)
