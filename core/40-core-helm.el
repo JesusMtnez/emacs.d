@@ -26,5 +26,9 @@
                  (define-key helm-map (kbd "C-z") 'helm-select-action)) ; list actions using C-z
   :diminish helm-mode)
 
+(use-package swiper-helm
+  :bind (("C-s" . swiper-helm)
+         ("C-r" . swiper-helm)))
+
 (provide '40-core-helm)
 ;;; 40-core-helm.el ends here
