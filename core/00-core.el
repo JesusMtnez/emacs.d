@@ -31,7 +31,7 @@
   (electric-pair-mode t)
   (delete-selection-mode t)
   (global-auto-revert-mode t)
-  (custom-file nil "Do not store customizations")
+  (custom-file null-device "Do not store customizations")
   ; Smooth scrolling
   (redisplay-dont-pause t)
   (scroll-margin 5)
