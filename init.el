@@ -61,10 +61,11 @@
 (eval-when-compile
   (require 'use-package))
 
-(require 'bind-key)
-
 (setq use-package-always-defer t
-      use-package-always-ensure t)
+      use-package-always-ensure t
+      use-package-compute-statistics t)
+
+(require 'bind-key)
 
 (use-package diminish)
 
