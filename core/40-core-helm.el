@@ -24,8 +24,6 @@
   (helm-recentf-fuzzy-match t)
   (helm-completion-in-region-fuzzy-match t)
   (helm-M-x-fuzzy-match t)
-  :config
-  (require 'helm-config)
   (helm-mode t)
   :diminish helm-mode)
 
