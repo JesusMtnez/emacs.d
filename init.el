@@ -41,7 +41,7 @@
   "Where volatile files are storaged.")
 
 (require 'package)
-;(setq package-enable-at-startup nil)
+(setq package-enable-at-startup nil)
 
 ;; MELPA repos for packages.
 (push '("melpa" . "https://melpa.org/packages/") package-archives)
