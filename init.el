@@ -5,11 +5,13 @@
 ;; License: MIT
 
 ;; GC threshold to 1GB
-(setq gc-cons-threshold 1000000000)
+(setq gc-cons-threshold 1000000000
+      gc-cons-percentage 0.6)
 
 (add-hook 'after-init-hook
           (lambda ()
-            (setq gc-cons-threshold 800000)))
+            (setq gc-cons-threshold 800000
+                  gc-cons-percentage 0.1)))
 
 (defvar defaults/file-name-handler-alist file-name-handler-alist
   "Save default value for file-name-handler-alist")
