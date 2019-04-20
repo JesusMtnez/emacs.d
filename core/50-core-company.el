@@ -10,11 +10,12 @@
   (company-dabbrev-downcase nil)
   (company-dabbrev-ignore-case t))
 
-(use-package company-box
-  :after (company)
-  :hook (company-mode . company-box-mode)
-  :custom
-  (company-box-icons-alist 'company-box-icons-all-the-icons))
+(unless (version< emacs-version "26.1")
+  (use-package company-box
+    :after (company)
+    :hook (company-mode . company-box-mode)
+    :custom
+    (company-box-icons-alist 'company-box-icons-all-the-icons)))
 
 (use-package company-quickhelp
   :after (company)
