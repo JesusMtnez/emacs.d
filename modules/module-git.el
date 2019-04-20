@@ -1,5 +1,12 @@
 ;;; module-git.el --- git integration
 
+(use-package helm-gitignore)
+
+(use-package git-commit
+  :hook (after-init . global-git-commit-mode))
+
+(use-package gitconfig-mode)
+
 (use-package git-gutter
   :unless (version< emacs-version "26.1")
   :hook ((prog-mode text-mode) . git-gutter-mode)
@@ -9,12 +16,13 @@
   (git-gutter:update-interval 0.1)
   (git-gutter:verbosity 0))
 
-(use-package git-commit
-  :hook (after-init . global-git-commit-mode))
-
-(use-package gitconfig-mode)
-
 (use-package gitignore-mode)
+
+(use-package git-link)
+
+(use-package git-messenger)
+
+(use-package git-timemachine)
 
 (use-package magit
   :bind ("C-x g" . magit-status))
