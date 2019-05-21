@@ -9,7 +9,8 @@
 
 (use-package lsp-mode
   :custom
-  (lsp-session-file (concat cache-dir ".lsp-session-v1")))
+  (lsp-session-file (concat cache-dir ".lsp-session-v1"))
+  (lsp-prefer-flymake nil))
 
 ;; (use-package eglot
 ;;   :config
