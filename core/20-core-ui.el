@@ -12,6 +12,11 @@
 (use-package dashboard
   :demand
   :if (< (length command-line-args) 2)
+  :custom
+  (dashboard-startup-banner 'logo)
+  (dashboard-banner-logo-title "The One True Editor, Emacs")
+  (dashboard-set-heading-icons t)
+  (dashboard-set-file-icons t)
   :config
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
@@ -21,9 +26,7 @@
 
   (setq dashboard-items '((packages)
                           (projects . 10)
-                          (recents . 10))
-        dashboard-startup-banner 'logo
-        dashboard-banner-logo-title "The One True Editor, Emacs")
+                          (recents . 10)))
   (dashboard-setup-startup-hook))
 
 (use-package scroll-bar
