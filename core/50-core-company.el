@@ -1,14 +1,30 @@
 ;;; 50-core-company.el --- company integration
 
 (use-package company
-  :diminish (company-mode . "CM")
+  :diminish
   :hook (after-init . global-company-mode)
-  :bind (("M-/" . company-complete))
+  :functions (my-company-yasnippet)
+  :bind (("M-/" . company-complete)
+         ("<backtab>" . company-yasnippet)
+         :map company-active-map
+         ("C-p" . company-select-previous)
+         ("C-n" . company-select-next)
+         ("<tab>" . company-complete-common-or-cycle)
+         ("<backtab>" . my-company-yasnippet))
   :custom
-  (company-idle-delay nil)
+  (company-idle-delay 0)
+  (company-echo-delay 0)
+  (company-minimum-prefix-length 0)
+  (company-tooltip-limit 12)
+  (company-tooltip-align-annotations t)
   (company-show-numbers t)
   (company-dabbrev-downcase nil)
-  (company-dabbrev-ignore-case t))
+  (company-dabbrev-ignore-case t)
+  :config
+  (defun my-company-yasnippet ()
+    (interactive)
+    (company-abort)
+    (call-interactively 'company-yasnippet)))
 
 (unless (version< emacs-version "26.1")
   (use-package company-box
