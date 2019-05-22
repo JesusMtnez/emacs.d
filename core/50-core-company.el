@@ -37,10 +37,5 @@
     (company-box-doc-delay 0.2)
     (company-box-icons-alist 'company-box-icons-all-the-icons)))
 
-(use-package helm-company
-  :after (company helm)
-  :bind (:map company-active-map
-              ("C-/" . helm-company)))
-
 (provide '50-core-company)
 ;;; 50-core-company.el ends here
