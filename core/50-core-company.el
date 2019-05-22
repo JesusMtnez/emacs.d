@@ -28,16 +28,14 @@
 
 (unless (version< emacs-version "26.1")
   (use-package company-box
+    :diminish
     :after (company)
     :hook (company-mode . company-box-mode)
     :custom
+    (company-box-show-single-candidate t)
+    (company-box-max-candidates 50)
+    (company-box-doc-delay 0.2)
     (company-box-icons-alist 'company-box-icons-all-the-icons)))
-
-(use-package company-quickhelp
-  :after (company)
-  :custom
-  (company-quickhelp-delay 0.2)
-  (company-quickhelp-mode t))
 
 (use-package helm-company
   :after (company helm)
