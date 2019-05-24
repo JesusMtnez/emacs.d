@@ -1,7 +1,6 @@
 ;;; 30-core-modeline.el --- Modeline configuration
 
 (use-package doom-modeline
-  :pin melpa-stable
   :hook
   (after-init . doom-modeline-mode)
   :custom
