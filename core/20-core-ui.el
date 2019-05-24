@@ -17,6 +17,7 @@
   (dashboard-banner-logo-title "The One True Editor, Emacs")
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons t)
+  (dashboard-set-init-info nil)
   :config
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
