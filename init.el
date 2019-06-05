@@ -25,6 +25,9 @@
 (defvar version "0.1.0"
   "Current version of my configuration.")
 
+(defvar homepage "https://gitlab.com/JesusMtnez/emacs.d"
+  "Project homepage.")
+
 (defvar emacs-dir (expand-file-name user-emacs-directory)
   "The path to this emacs.d directory.")
 
