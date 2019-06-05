@@ -24,12 +24,13 @@
   (dashboard-set-navigator t)
   (dashboard-navigator-buttons
    `(
-     (,(all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1)
+     (,(and (display-graphic-p)
+            (all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1))
       "Homepage"
       "Browse Homepage"
       (lambda (&rest _) (browse-url homepage)))
-
-     (,(all-the-icons-material "update" :height 1.2 :v-adjust -0.24)
+     (,(and (display-graphic-p)
+            (all-the-icons-material "update" :height 1.2 :v-adjust -0.24))
       "Update"
       "Update emacs"
       (lambda (&rest _) (auto-package-update-now)))))
