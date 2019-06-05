@@ -1,5 +1,8 @@
 ;;; 20-core-ui.el --- User Insterface core
 
+(use-package all-the-icons
+  :commands (all-the-icons-faicon))
+
 (use-package doom-themes
   :demand t
   :custom
@@ -18,6 +21,19 @@
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons t)
   (dashboard-set-init-info nil)
+  (dashboard-set-navigator t)
+  (dashboard-navigator-buttons
+   `(
+     (,(all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1)
+      "Homepage"
+      "Browse Homepage"
+      (lambda (&rest _) (browse-url homepage)))
+
+     (,(all-the-icons-material "update" :height 1.2 :v-adjust -0.24)
+      "Update"
+      "Update emacs"
+      (lambda (&rest _) (auto-package-update-now)))))
+
   :config
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
@@ -68,8 +84,6 @@
   :bind (("C-x C-z" . zoom-window-zoom))
   :custom
   (zoom-window-mode-line-color "DarkRed" "Modeline color when enabled"))
-
-(use-package all-the-icons)
 
 (use-package ace-window
   :bind (("M-o" . ace-window))
