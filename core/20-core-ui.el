@@ -33,7 +33,11 @@
       "Update"
       "Update emacs"
       (lambda (&rest _) (auto-package-update-now)))))
-
+  (dashboard-set-footer t)
+  (dashboard-footer (format "Powered by JesusMtnez, %s" (format-time-string "%Y")))
+  (dashboard-footer-icon (cond ((display-graphic-p)
+                                (all-the-icons-faicon "code" :height 1.5 :v-adjust -0.1 :face 'error))
+                               (t (propertize ">" 'face 'font-lock-doc-face))))
   :config
   (defun dashboard-load-packages (list-size)
     (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
