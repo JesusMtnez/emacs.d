@@ -2,12 +2,15 @@
 
 (use-package scala-mode
   :mode "\\.s\\(cala\\|bt\\)$"
+  :hook (scala-mode . lsp)
+  :custom
+  (scala-indent:align-forms t)
+  (scala-indent:align-parameters t)
+  (scala-indent:indent-value-expression t)
+  (scala-indent:default-run-on-strategy)
+  (scala-indent:operator-strategy)
   :config
-  (setq scala-indent:align-forms t
-        scala-indent:align-parameters t
-        scala-indent:indent-value-expression t
-        scala-indent:default-run-on-strategy
-        scala-indent:operator-strategy))
+  (setq lsp-metals-server-command "~/.local/bin/metals-emacs"))
 
 (use-package sbt-mode
   :after scala-mode
@@ -19,13 +22,6 @@
    'minibuffer-complete-word
    'self-insert-command
    minibuffer-local-completion-map))
-
-(use-package lsp-scala
-  :after scala-mode
-  :demand t
-  :hook (scala-mode . lsp)
-  :init
-  (setq lsp-scala-server-command "~/.local/bin/metals-emacs"))
 
 (provide 'module-scala)
 ;;; module-scala.el ends here
