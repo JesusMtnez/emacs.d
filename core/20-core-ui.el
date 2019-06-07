@@ -15,6 +15,10 @@
 (use-package dashboard
   :demand
   :if (< (length command-line-args) 2)
+  :bind (:map dashboard-mode-map
+              ("U" . auto-package-update-now)
+              ("R" . restart-emacs)
+              ("K" . kill-emacs))
   :custom
   (dashboard-startup-banner 'logo)
   (dashboard-banner-logo-title "The One True Editor, Emacs")
