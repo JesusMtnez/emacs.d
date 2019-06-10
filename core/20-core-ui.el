@@ -28,21 +28,21 @@
   (dashboard-set-navigator t)
   (dashboard-navigator-buttons
    `(
-     (,(and (display-graphic-p)
-            (all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1))
-      "Homepage"
-      "Browse Homepage"
-      (lambda (&rest _) (browse-url homepage)))
-     (,(and (display-graphic-p)
-            (all-the-icons-material "update" :height 1.2 :v-adjust -0.24))
-      "Update"
-      "Update emacs"
-      (lambda (&rest _) (auto-package-update-now)))
-     (,(and (display-graphic-p)
-            (all-the-icons-material "autorenew" :height 1.2 :v-adjust -0.15))
-      "Restart"
-      "Restar emacs"
-      (lambda (&rest _) (restart-emacs)))))
+     ((,(and (display-graphic-p)
+             (all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1))
+       "Homepage"
+       "Browse Homepage"
+       (lambda (&rest _) (browse-url homepage)))
+      (,(and (display-graphic-p)
+             (all-the-icons-material "update" :height 1.2 :v-adjust -0.24))
+       "Update"
+       "Update emacs"
+       (lambda (&rest _) (auto-package-update-now)))
+      (,(and (display-graphic-p)
+             (all-the-icons-material "autorenew" :height 1.2 :v-adjust -0.15))
+       "Restart"
+       "Restar emacs"
+       (lambda (&rest _) (restart-emacs))))))
   (dashboard-set-footer t)
   (dashboard-footer (format "Powered by JesusMtnez, %s" (format-time-string "%Y")))
   (dashboard-footer-icon (cond ((display-graphic-p)
