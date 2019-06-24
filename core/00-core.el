@@ -56,6 +56,11 @@
   (initial-scratch-message nil)
   (initial-major-mode 'org-mode))
 
+(use-package recentf
+  :ensure nil
+  :config
+  (add-to-list 'recentf-exclude (format "%selpa.*" emacs-dir)))
+
 (use-package mwim
   :bind (("C-a" . mwim-beginning)
          ("C-e" . mwim-end)))
