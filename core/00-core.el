@@ -59,7 +59,9 @@
 (use-package recentf
   :ensure nil
   :config
-  (add-to-list 'recentf-exclude (format "%selpa.*" emacs-dir)))
+  (add-to-list 'recentf-exclude (format "%selpa.*" emacs-dir))
+  :custom
+  (recentf-save-file (concat cache-dir "recentf")))
 
 (use-package mwim
   :bind (("C-a" . mwim-beginning)
