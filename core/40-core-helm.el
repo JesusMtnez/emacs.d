@@ -27,9 +27,14 @@
   (helm-mode t)
   :diminish helm-mode)
 
-(use-package swiper-helm
-  :bind (("C-s" . swiper-helm)
-         ("C-r" . swiper-helm)))
+(use-package helm-swoop
+  :bind (("C-s" . helm-swoop)
+         ("C-r" . helm-swoop)
+         :map helm-swoop-map
+         ("C-r" . helm-previous-line)
+         ("C-s" . helm-next-line))
+  :custom
+  (helm-swoop-use-fuzzy-match t))
 
 (provide '40-core-helm)
 ;;; 40-core-helm.el ends here
