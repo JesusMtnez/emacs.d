@@ -1,9 +1,7 @@
-;;; 40-core-helm.el --- helm integration
-;; TODO Integrate with https://github.com/emacs-helm/helm-ls-git
+;;; 40-core-helm.el --- helm integration.    -*- lexical-binding: t -*-
 
 (use-package helm
-  :bind (("C-c h"   . helm-command-prefix)
-         ("C-x C-f" . helm-find-files)
+  :bind (("C-x C-f" . helm-find-files)
          ("C-x b"   . helm-buffers-list)
          ("M-x"     . helm-M-x)
          ("M-y"     . helm-show-kill-ring)
