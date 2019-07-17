@@ -47,8 +47,10 @@
 (setq package-enable-at-startup nil)
 
 ;; MELPA repos for packages.
-(push '("melpa" . "https://melpa.org/packages/") package-archives)
-(push '("melpa-stable" . "https://stable.melpa.org/packages/") package-archives)
+(setq package-archives
+      '(("gnu"          . "http://elpa.gnu.org/packages/")
+        ("melpa"        . "https://melpa.org/packages/")
+        ("melpa-stable" . "https://stable.melpa.org/packages/")))
 
 (setq package-archive-priorities
       '(("gnu"          . 10)
