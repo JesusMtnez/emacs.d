@@ -3,7 +3,7 @@
 (use-package lsp-ui
   :custom
   (lsp-ui-doc-enable t)
-  (lsp-ui-doc-include-signture t)
+  (lsp-ui-doc-include-signature t)
   (lsp-ui-doc-position 'at-point)
   (lsp-ui-sideline-enable nil))
 
