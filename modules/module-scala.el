@@ -2,7 +2,6 @@
 
 (use-package scala-mode
   :mode "\\.s\\(cala\\|bt\\)$"
-  :hook (scala-mode . lsp)
   :custom
   (scala-indent:align-forms t)
   (scala-indent:align-parameters t)
