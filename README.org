@@ -1,0 +1,56 @@
+[[https://www.gnu.org/software/emacs/][https://img.shields.io/badge/GNU%20Emacs-26.3-blue.svg]]
+[[/LICENSE][https://img.shields.io/github/license/JesusMtnez/emacs.d.svg]]
+[[https://gitlab.com/JesusMtnez/emacs.d/pipelines][https://img.shields.io/gitlab/pipeline/JesusMtnez/emacs.d/master.svg]]
+
+* [[http://i.imgur.com/TANBZR2.png]] JesusMtnez's Emacs Configuration [[http://i.imgur.com/TANBZR2.png]]
+
+This repository contains my personal configuration for Emacs:
+
+[[/assets/2019-01-25.png]]
+
+** Installation
+
+To use this configuration, just clone the repository:
+
+*** SSH
+
+#+BEGIN_EXAMPLE
+  git clone git@gitlab.com:JesusMtnez/emacs.d $HOME/.emacs.d
+#+END_EXAMPLE
+
+*** HTTPS
+
+#+BEGIN_EXAMPLE
+  git clone https://gitlab.com/JesusMtnez/emacs.d $HOME/.emacs.d
+#+END_EXAMPLE
+
+** Organization
+
+The configuration is organized like:
+
+#+BEGIN_EXAMPLE
+  .emacs.d
+  ├── init.el
+  ├── core/
+  │   └── ...
+  ├── modules
+  │   └── ...
+  ├── snippets/
+  │   └── ...
+  ├── local/
+  │   └── cache/
+  ├── CHANGELOG.md
+  ├── LICENSE
+  ├── README.md
+  └── custom.el
+#+END_EXAMPLE
+
+- =init.el=: bootstrap emacs configuration.
+- =core=: main emacs functionality enhancements.
+- =modules=: emacs extensions for my daily use.
+- =local=: specific files for each emacs installation.
+
+** Copyright
+
+Copyright (c) 2017-2019 JesusMtnez. See [[/LICENSE][LICENSE]] for
+details.
