@@ -8,12 +8,6 @@
 
 stages:
   - build
-  #- test
-
-build:25.3:
-  variables:
-    EMACS_VERSION: "25.3"
-  <<: *build_def
 
 build:26.3:
   variables:

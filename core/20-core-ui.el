@@ -84,15 +84,8 @@
 (use-package rainbow-delimiters
   :hook (prog-mode . rainbow-delimiters-mode))
 
-(unless (version< emacs-version "26.1")
-  (use-package display-line-numbers
-    :hook ((prog-mode text-mode) . display-line-numbers-mode)))
-
-(when (version< emacs-version "26.1")
-  (use-package linum
-    :hook ((prog-mode text-mode) . linum-mode)
-    :custom
-    (linum-format "%4d")))
+(use-package display-line-numbers
+  :hook ((prog-mode text-mode) . display-line-numbers-mode))
 
 (use-package zoom-window
   :bind (("C-x C-z" . zoom-window-zoom))
