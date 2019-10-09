@@ -5,11 +5,9 @@
   :custom
   (markdown-indent-on-enter nil))
 
-(use-package flymd
-  :custom
-  (flymd-output-directory (concat cache-dir "flymd")
-        flymd-browser-open-function (lambda (url) (let((browse-url-browser-function 'browse-url-firefox))
-                                                    (browse-url url)))))
+(use-package grip-mode
+  :bind (:map markdown-mode-command-map
+              ("g" . grip-mode)))
 
 (use-package markdown-toc
   :hook (before-save . markdown-toc-refresh-toc)
