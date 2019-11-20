@@ -14,10 +14,10 @@
   (projectile-globally-ignored-files '(".DS_Store" "Icon")))
 
 (use-package helm-projectile
-  :after (projectile-mode)
   :custom
   (helm-projectile-fuzzy-match t)
-  :hook (projectile-mode . helm-projectile-on))
+  :config
+  (helm-projectile-on))
 
 (use-package neotree
   :functions (neotree-resize-window neotree-project-dir)
