@@ -3,6 +3,8 @@
 (use-package projectile
   :hook (after-init . projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
+  :bind (:map projectile-command-map
+              ("a" . projectile-add-known-project))
   :custom
   (projectile-enable-caching nil)
   (projectile-indexing-method 'alien)
