@@ -21,7 +21,7 @@
 (use-package company-lsp
   :after company-mode
   :custom
-  (company-lsp-cache-candidates nil)
+  (company-lsp-cache-candidates t)
   (company-lsp-async t)
   (company-lsp-enable-recompletion t))
 
