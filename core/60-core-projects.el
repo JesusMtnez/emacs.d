@@ -31,10 +31,10 @@
   (defun neotree-resize-window (&rest _args)
     "Resize neotree window."
     (neo-global--when-window
-      (let ((fit-window-to-buffer-horizontally t))
-        (neo-buffer--unlock-width)
-        (fit-window-to-buffer)
-        (neo-buffer--lock-width))))
+     (let ((fit-window-to-buffer-horizontally t))
+       (neo-buffer--unlock-width)
+       (fit-window-to-buffer)
+       (neo-buffer--lock-width))))
 
   (defun neotree-project-dir ()
     "Open NeoTree using the git root."
