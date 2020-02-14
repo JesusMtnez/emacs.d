@@ -41,7 +41,9 @@
   :config
   (put 'downcase-region 'disabled nil)
   (fset 'yes-or-no-p 'y-or-n-p)
-  (load (concat user-emacs-directory "localrc.el") 'noerror))
+  (load (concat user-emacs-directory "localrc.el") 'noerror)
+  (setq exec-path (add-to-list 'exec-path "/home/jmartinez/.local/bin"))
+  (setenv "PATH" (concat "/home/jmartinez/.local/bin:" (getenv "PATH"))))
 
 (use-package simple
   :ensure nil
