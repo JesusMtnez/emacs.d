@@ -2,6 +2,7 @@
   image: silex/emacs:$EMACS_VERSION-alpine
   stage: build
   before_script:
+    - rm -rf /root/.emacs.d
     - ln -sf /builds/JesusMtnez/emacs.d /root/.emacs.d
   script:
     - emacs --debug-init --batch -u root
