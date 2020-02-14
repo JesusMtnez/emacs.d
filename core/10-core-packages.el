@@ -1,6 +1,6 @@
 ;;; 10-core-packages.el --- packages managements core
 
-(use-package cl)
+(use-package cl-lib)
 (require 'misc)
 
 (use-package auto-package-update
