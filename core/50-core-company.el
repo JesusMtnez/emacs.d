@@ -12,7 +12,7 @@
          ("<tab>" . company-complete-common-or-cycle)
          ("<backtab>" . my-company-yasnippet))
   :custom
-  (company-idle-delay 0)
+  (company-idle-delay 0.1)
   (company-echo-delay 0)
   (company-minimum-prefix-length 0)
   (company-tooltip-limit 12)
