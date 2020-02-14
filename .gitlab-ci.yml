@@ -2,6 +2,7 @@
   image: silex/emacs:$EMACS_VERSION-alpine
   stage: build
   before_script:
+    - rm -rf /root/.emacs.d
     - ln -sf /builds/JesusMtnez/emacs.d /root/.emacs.d
   script:
     - emacs --debug-init --batch -u root
@@ -12,4 +13,9 @@ stages:
 build:26.3:
   variables:
     EMACS_VERSION: "26.3"
+  <<: *build_def
+
+build:master:
+  variables:
+    EMACS_VERSION: "master"
   <<: *build_def

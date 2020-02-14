@@ -72,6 +72,7 @@
       use-package-compute-statistics t)
 
 (require 'bind-key)
+(require 'cl-lib)
 
 (use-package diminish)
 
