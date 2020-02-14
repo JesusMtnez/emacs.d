@@ -13,3 +13,8 @@ build:26.3:
   variables:
     EMACS_VERSION: "26.3"
   <<: *build_def
+
+build:master:
+  variables:
+    EMACS_VERSION: "master"
+  <<: *build_def
