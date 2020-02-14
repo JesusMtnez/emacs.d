@@ -1,4 +1,5 @@
 [[https://www.gnu.org/software/emacs/][https://img.shields.io/badge/GNU%20Emacs-26.3-blue.svg]]
+[[https://www.gnu.org/software/emacs/][https://img.shields.io/badge/GNU%20Emacs-master-blue.svg]]
 [[/LICENSE][https://img.shields.io/github/license/JesusMtnez/emacs.d.svg]]
 [[https://gitlab.com/JesusMtnez/emacs.d/pipelines][https://img.shields.io/gitlab/pipeline/JesusMtnez/emacs.d/master.svg]]
 
