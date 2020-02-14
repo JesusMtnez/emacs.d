@@ -8,16 +8,12 @@
   (lsp-ui-sideline-enable nil))
 
 (use-package lsp-mode
-  :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :hook ((lsp-mode . lsp-enable-which-key-integration)
+         ((scala-mode haskell-mode) . lsp-deferred))
   :bind-keymap ("C-c l" . lsp-command-map)
   :custom
   (lsp-session-file (concat cache-dir ".lsp-session-v1"))
   (lsp-prefer-flymake nil))
-
-;; (use-package eglot
-;;   :config
-;;   (add-to-list 'eglot-server-programs '(scala-mode . ("metals-emacs")))
-;;   :hook (scala-mode . eglot-ensure))
 
 (use-package helm-lsp
   :after helm lsp-mode)
