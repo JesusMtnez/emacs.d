@@ -8,6 +8,8 @@
   (lsp-ui-sideline-enable nil))
 
 (use-package lsp-mode
+  :hook ((lsp-mode . lsp-enable-which-key-integration))
+  :bind-keymap ("C-c l" . lsp-command-map)
   :custom
   (lsp-session-file (concat cache-dir ".lsp-session-v1"))
   (lsp-prefer-flymake nil))
