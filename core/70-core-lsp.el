@@ -13,7 +13,7 @@
   :bind-keymap ("C-c l" . lsp-command-map)
   :custom
   (lsp-session-file (concat cache-dir ".lsp-session-v1"))
-  (lsp-prefer-flymake nil))
+  (lsp-diagnostic-package :none))
 
 (use-package helm-lsp
   :after helm lsp-mode)
