@@ -44,7 +44,7 @@
        "Restar emacs"
        (lambda (&rest _) (restart-emacs))))))
   (dashboard-set-footer t)
-  (dashboard-footer (format "Powered by JesusMtnez, %s" (format-time-string "%Y")))
+  (dashboard-footer-messages (list (format "Powered by JesusMtnez, %s" (format-time-string "%Y"))))
   (dashboard-footer-icon (cond ((display-graphic-p)
                                 (all-the-icons-faicon "code" :height 1.5 :v-adjust -0.1 :face 'error))
                                (t (propertize ">" 'face 'font-lock-doc-face))))
