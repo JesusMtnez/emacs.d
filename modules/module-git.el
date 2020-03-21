@@ -8,7 +8,6 @@
 (use-package gitconfig-mode)
 
 (use-package git-gutter
-  :unless (version< emacs-version "26.1")
   :hook ((prog-mode text-mode) . git-gutter-mode)
   :diminish git-gutter-mode
   :custom
