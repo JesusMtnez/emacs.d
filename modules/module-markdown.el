@@ -7,7 +7,10 @@
 
 (use-package grip-mode
   :bind (:map markdown-mode-command-map
-              ("g" . grip-mode)))
+              ("g" . grip-mode))
+  :custom
+  (grip-update-after-change nil)
+  (grip-preview-use-webkit nil))
 
 (use-package markdown-toc
   :hook (before-save . markdown-toc-refresh-toc)
