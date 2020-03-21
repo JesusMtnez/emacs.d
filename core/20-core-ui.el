@@ -20,7 +20,7 @@
               ("R" . restart-emacs)
               ("K" . kill-emacs))
   :custom
-  (dashboard-startup-banner 'logo)
+  (dashboard-startup-banner (concat user-emacs-directory "assets/emacs-vscode.png"))
   (dashboard-banner-logo-title "The One True Editor, Emacs")
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons t)
