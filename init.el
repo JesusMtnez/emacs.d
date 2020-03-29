@@ -10,7 +10,7 @@
 
 (add-hook 'after-init-hook
           (lambda ()
-            (setq gc-cons-threshold 800000
+            (setq gc-cons-threshold 100000000
                   gc-cons-percentage 0.1)))
 
 (defvar defaults/file-name-handler-alist file-name-handler-alist
