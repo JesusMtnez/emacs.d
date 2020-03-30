@@ -1,14 +1,5 @@
 ;;; 70-core-lsp.el --- lsp support
 
-(use-package lsp-ui
-  :custom
-  (lsp-ui-doc-enable t)
-  (lsp-ui-doc-include-signature t)
-  (lsp-ui-doc-position 'at-point)
-  (lsp-ui-doc-delay 0.2)
-  (lsp-ui-imenu-enable nil)
-  (lsp-ui-sideline-enable nil))
-
 (use-package lsp-mode
   :hook ((lsp-mode . lsp-enable-which-key-integration)
          ((scala-mode haskell-mode) . lsp-deferred))
