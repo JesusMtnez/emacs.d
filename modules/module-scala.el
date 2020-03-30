@@ -6,8 +6,6 @@
   (scala-indent:align-forms t)
   (scala-indent:align-parameters t)
   (scala-indent:indent-value-expression t)
-  (scala-indent:default-run-on-strategy)
-  (scala-indent:operator-strategy)
   :config
   (setq lsp-metals-server-command "~/.local/bin/metals-emacs"))
 
