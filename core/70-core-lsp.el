@@ -15,11 +15,13 @@
   (lsp-enable-semantic-highlighting nil)
   (lsp-enable-indentation nil)
   (lsp-enable-on-type-formatting nil)
-  (lsp-prefer-capf t)
   (lsp-idle-delay 0.1)
   (lsp-eldoc-enable-hoover t)
   (lsp-eldoc-render-all t)
-  (lsp-diagnostic-package :flymake))
+  (lsp-diagnostic-package :flymake)
+  (lsp-signature-auto-activate t)
+  (lsp-signature-render-documentation t)
+  (lsp-enable-text-document-color t))
 
 (use-package helm-lsp
   :after helm lsp-mode)
@@ -27,7 +29,7 @@
 (use-package company-lsp
   :after company-mode
   :custom
-  (company-lsp-cache-candidates t)
+  (company-lsp-cache-candidates nil)
   (company-lsp-async t)
   (company-lsp-enable-recompletion t))
 
