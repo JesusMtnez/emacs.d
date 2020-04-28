@@ -80,6 +80,9 @@
 (use-package el-init)
 
 (el-init-load emacs-dir
-  :subdirectories (list core-dir modules-dir))
+              :subdirectories (list core-dir modules-dir)
+              :wrappers '(el-init-require/benchmark
+                          el-init-require/lazy
+                          el-init-require/compile-old-library))
 
 ;;; init.el ends here
