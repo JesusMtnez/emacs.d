@@ -1,5 +1,5 @@
 .build_template: &build_def
-  image: silex/emacs:$EMACS_VERSION-alpine
+  image: silex/emacs:$EMACS_VERSION-alpine-dev
   stage: build
   before_script:
     - rm -rf /root/.emacs.d

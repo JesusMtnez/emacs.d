@@ -9,8 +9,7 @@
   (doom-themes-enable-bold t)
   (doom-themes-enable-italic t)
   :config
-  (load-theme 'doom-one t)
-  (doom-themes-org-config))
+  (load-theme 'doom-one-light t))
 
 (use-package dashboard
   :demand
@@ -87,10 +86,10 @@
 (use-package display-line-numbers
   :hook ((prog-mode text-mode) . display-line-numbers-mode))
 
-(use-package zoom-window
-  :bind (("C-x C-z" . zoom-window-zoom))
-  :custom
-  (zoom-window-mode-line-color "DarkRed" "Modeline color when enabled"))
+;; (use-package zoom-window
+;;   :bind (("C-x C-z" . zoom-window-zoom))
+;;   :custom
+;;   (zoom-window-mode-line-color "DarkRed" "Modeline color when enabled"))
 
 (use-package ace-window
   :defer 3
