@@ -101,13 +101,12 @@
   (push " *NeoTree*" aw-ignored-buffers)
   (push "*which-key*" aw-ignored-buffers))
 
-(use-package faces
-  :ensure nil
-  :config
-  (when (member "Hack" (font-family-list))
-    (set-face-attribute 'default nil :font "Hack 9"))
-  (when (member "FontAwesome" (font-family-list))
-    (set-fontset-font t 'unicode "FontAwesome" nil 'prepend)))
+(add-hook 'after-init-hook
+          (lambda ()
+            (when (member "Hack" (font-family-list))
+              (set-face-attribute 'default nil :font "Hack 9"))
+            (when (member "FontAwesome" (font-family-list))
+              (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))))
 
 (provide '20-core-ui)
 ;;; 20-core-ui.el ends here
