@@ -16,6 +16,7 @@
   (projectile-globally-ignored-files '(".DS_Store" "Icon")))
 
 (use-package helm-projectile
+  :after (projectile)
   :custom
   (helm-projectile-fuzzy-match t)
   :config

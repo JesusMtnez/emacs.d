@@ -1,6 +1,7 @@
 ;;; 40-core-helm.el --- helm integration.    -*- lexical-binding: t -*-
 
 (use-package helm
+  :hook (after-init . helm-mode)
   :bind (("C-x C-f" . helm-find-files)
          ("C-x b"   . helm-buffers-list)
          ("M-x"     . helm-M-x)
@@ -26,6 +27,7 @@
   :diminish helm-mode)
 
 (use-package helm-swoop
+  :after (helm)
   :bind (("C-s" . helm-swoop)
          ("C-r" . helm-swoop)
          :map helm-swoop-map
