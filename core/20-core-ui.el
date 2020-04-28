@@ -93,6 +93,7 @@
   (zoom-window-mode-line-color "DarkRed" "Modeline color when enabled"))
 
 (use-package ace-window
+  :defer 3
   :bind (("M-o" . ace-window))
   :custom
   (aw-dispatch-always t "Issue read-char even for one window")
