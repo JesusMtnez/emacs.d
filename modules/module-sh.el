@@ -10,6 +10,7 @@
   (sh-indentation 2))
 
 (use-package insert-shebang
+  :after sh-script
   :init (remove-hook 'find-file-hook 'insert-shebang)
   :config (setq insert-shebang-file-types
                 '(("py" . "python")
