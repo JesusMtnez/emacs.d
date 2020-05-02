@@ -5,7 +5,7 @@
   (haskell-stylish-on-save t))
 
 (use-package lsp-haskell
-  :after (lsp)
+  :after (haskell)
   :custom
   ;; (lsp-log-io t)
   (lsp-haskell-process-path-hie "ghcide")
