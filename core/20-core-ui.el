@@ -103,10 +103,12 @@
 
 (add-hook 'after-init-hook
           (lambda ()
-            (when (member "Hack" (font-family-list))
-              (set-face-attribute 'default nil :font "Hack 9"))
-            (when (member "FontAwesome" (font-family-list))
-              (set-fontset-font t 'unicode "FontAwesome" nil 'prepend))))
+            (when (member "FuraCode Nerd Font" (font-family-list))
+              (set-face-attribute 'default nil :font "FuraCode Nerd Font 9"))))
+
+(use-package fira-code-mode
+  :when (display-graphic-p)
+  :hook (after-init . global-fira-code-mode))
 
 (provide '20-core-ui)
 ;;; 20-core-ui.el ends here
