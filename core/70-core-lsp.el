@@ -1,10 +1,10 @@
 ;;; 70-core-lsp.el --- lsp support
 
 (use-package lsp-mode
+  :commands (lsp)
   :hook ((lsp-mode . lsp-enable-which-key-integration)
-         ((scala-mode haskell-mode) . lsp-deferred))
+         (lsp-mode . lsp-lens-mode))
   :bind-keymap ("C-c l" . lsp-command-map)
-  :commands (lsp lsp-deferred)
   :custom
   (lsp-session-file (concat cache-dir ".lsp-session-v1"))
   (lsp-auto-guess-root t)
@@ -25,13 +25,6 @@
 
 (use-package helm-lsp
   :after helm lsp-mode)
-
-(use-package company-lsp
-  :after company-mode
-  :custom
-  (company-lsp-cache-candidates nil)
-  (company-lsp-async t)
-  (company-lsp-enable-recompletion t))
 
 (provide '70-core-lsp)
 ;;; 70-core-lsp.el ends here

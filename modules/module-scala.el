@@ -5,9 +5,7 @@
   :custom
   (scala-indent:align-forms t)
   (scala-indent:align-parameters t)
-  (scala-indent:indent-value-expression t)
-  :config
-  (setq lsp-metals-server-command "~/.local/bin/metals-emacs"))
+  (scala-indent:indent-value-expression t))
 
 (use-package sbt-mode
   :after scala-mode
@@ -19,6 +17,10 @@
    'minibuffer-complete-word
    'self-insert-command
    minibuffer-local-completion-map))
+
+(use-package lsp-metals
+  :after scala-mode
+  :hook (scala-mode . lsp))
 
 (provide 'module-scala)
 ;;; module-scala.el ends here
