@@ -1,7 +1,10 @@
 .build_template: &build_def
-  image: silex/emacs:$EMACS_VERSION-alpine-dev
+  image: nixos/nix:latest
   stage: build
   before_script:
+    - nix-env -iA nixpkgs.cachix nixpkgs.bash nixpkgs.git
+    - cachix use emacs-ci
+    - nix-env -iA "$EMACS_VERSION" -f https://github.com/purcell/nix-emacs-ci/archive/master.tar.gz
     - rm -rf /root/.emacs.d
     - ln -sf /builds/JesusMtnez/emacs.d /root/.emacs.d
   script:
@@ -12,10 +15,15 @@ stages:
 
 build:26.3:
   variables:
-    EMACS_VERSION: "26.3"
+    EMACS_VERSION: "emacs-26-3"
+  <<: *build_def
+
+build:27.1:
+  variables:
+    EMACS_VERSION: "emacs-27-1"
   <<: *build_def
 
 build:master:
   variables:
-    EMACS_VERSION: "master"
+    EMACS_VERSION: "emacs-snapshot"
   <<: *build_def
