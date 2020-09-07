@@ -2,7 +2,7 @@
   image: nixos/nix:latest
   stage: build
   before_script:
-    - nix-env -iA nixpkgs.cachix nixpkgs.bash
+    - nix-env -iA nixpkgs.cachix nixpkgs.bash nixpkgs.git
     - cachix use emacs-ci
     - nix-env -iA "$EMACS_VERSION" -f https://github.com/purcell/nix-emacs-ci/archive/master.tar.gz
     - rm -rf /root/.emacs.d
