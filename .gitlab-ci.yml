@@ -1,4 +1,4 @@
-.build_template: &build_def
+.build_def:
   image: nixos/nix:latest
   stage: build
   before_script:
@@ -14,16 +14,16 @@ stages:
   - build
 
 build:26.3:
+  extends: .build_def
   variables:
     EMACS_VERSION: "emacs-26-3"
-  <<: *build_def
 
 build:27.1:
+  extends: .build_def
   variables:
     EMACS_VERSION: "emacs-27-1"
-  <<: *build_def
 
 build:master:
+  extends: .build_def
   variables:
     EMACS_VERSION: "emacs-snapshot"
-  <<: *build_def
