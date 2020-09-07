@@ -18,6 +18,11 @@ build:26.3:
     EMACS_VERSION: "emacs-26-3"
   <<: *build_def
 
+build:27.1:
+  variables:
+    EMACS_VERSION: "emacs-27-1"
+  <<: *build_def
+
 build:master:
   variables:
     EMACS_VERSION: "emacs-snapshot"
