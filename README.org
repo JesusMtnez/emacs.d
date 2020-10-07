@@ -3,7 +3,7 @@
 [[https://www.gnu.org/software/emacs/][https://img.shields.io/badge/GNU%20Emacs-master-blue.svg]]
 [[/LICENSE][https://img.shields.io/github/license/JesusMtnez/emacs.d.svg]]
 [[https://gitlab.com/JesusMtnez/emacs.d/pipelines][https://img.shields.io/gitlab/pipeline/JesusMtnez/emacs.d/master.svg]]
-[[https://builtwithnix.org][https://builtwithnix.org/badge.svg]]
+[[https://builtwithnix.org][https://img.shields.io/badge/Built_With-Nix-5277C3.svg?logo=nixos&labelColor=73C3D5]]
 
 * [[http://i.imgur.com/TANBZR2.png]] JesusMtnez's Emacs Configuration [[http://i.imgur.com/TANBZR2.png]]
 
