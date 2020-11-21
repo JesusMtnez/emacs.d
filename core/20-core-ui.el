@@ -23,7 +23,7 @@
   (dashboard-banner-logo-title "The One True Editor, Emacs")
   (dashboard-set-heading-icons t)
   (dashboard-set-file-icons t)
-  (dashboard-set-init-info nil)
+  (dashboard-set-init-info t)
   (dashboard-set-navigator t)
   (dashboard-navigator-buttons
    `(
@@ -48,15 +48,14 @@
                                 (all-the-icons-faicon "code" :height 1.5 :v-adjust -0.1 :face 'error))
                                (t (propertize ">" 'face 'font-lock-doc-face))))
   :config
-  (defun dashboard-load-packages (list-size)
-    (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
-            (format "[%d packages loaded in %s]" (length package-activated-list) (emacs-init-time))))
+  ;; (defun dashboard-load-packages (list-size)
+  ;;   (insert (make-string (ceiling (max 0 (- dashboard-banner-length 38)) 2) ? )
+  ;;           (format "[%d packages loaded in %s]" (length package-activated-list) (emacs-init-time))))
 
-  (add-to-list 'dashboard-item-generators '(packages . dashboard-load-packages))
+  ;; (add-to-list 'dashboard-item-generators '(packages . dashboard-load-packages))
 
-  (setq dashboard-items '((packages)
-                          (projects . 10)
-                          (recents . 10)))
+  (setq dashboard-items '((projects . 20)
+                          (recents . 15)))
   (dashboard-setup-startup-hook))
 
 (use-package scroll-bar
