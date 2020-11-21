@@ -1,7 +1,7 @@
 ;;; 20-core-ui.el --- User Insterface core
 
 (use-package all-the-icons
-  :commands (all-the-icons-faicon))
+  :commands (all-the-icons-faicon all-the-icons-material))
 
 (use-package doom-themes
   :demand t
@@ -28,24 +28,24 @@
   (dashboard-navigator-buttons
    `(
      ((,(and (display-graphic-p)
-             (all-the-icons-faicon "gitlab" :height 1.2 :v-adjust -0.1))
+             (all-the-icons-faicon "gitlab" :height 0.8 :face 'all-the-icons-orange))
        "Homepage"
        "Browse Homepage"
        (lambda (&rest _) (browse-url homepage)))
       (,(and (display-graphic-p)
-             (all-the-icons-material "update" :height 1.2 :v-adjust -0.24))
+             (all-the-icons-material "update" :height 0.7 :face 'all-the-icons-green))
        "Update"
        "Update emacs"
        (lambda (&rest _) (auto-package-update-now)))
       (,(and (display-graphic-p)
-             (all-the-icons-material "autorenew" :height 1.2 :v-adjust -0.15))
+             (all-the-icons-material "autorenew" :height 0.7 :face 'all-the-icons-yellow))
        "Restart"
        "Restar emacs"
        (lambda (&rest _) (restart-emacs))))))
   (dashboard-set-footer t)
   (dashboard-footer-messages (list (format "Powered by JesusMtnez, %s" (format-time-string "%Y"))))
   (dashboard-footer-icon (cond ((display-graphic-p)
-                                (all-the-icons-faicon "code" :height 1.5 :v-adjust -0.1 :face 'error))
+                                (all-the-icons-faicon "code" :height 1  :face 'all-the-icons-red))
                                (t (propertize ">" 'face 'font-lock-doc-face))))
   :config
   ;; (defun dashboard-load-packages (list-size)
